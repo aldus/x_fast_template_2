@@ -1,10 +1,12 @@
 <?php
 
 /**
- *	@version	0.3.0
- *	@date		2010-05-11
+ *	@version	0.3.2
+ *	@date		2010-05-13
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.3.2	2010-05-13	Add method "get_all_by_query"
  *
  *	0.3.1	2010-05-11	Bugfix/Addition inside method 'clean_up_str' for double-quotes and JS.
  *
@@ -58,7 +60,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.3.1";
+$module_version       = "0.3.2";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";

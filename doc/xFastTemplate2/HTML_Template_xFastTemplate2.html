@@ -173,7 +173,7 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																																																																																																																																																																																																																																																														
+																																																																																																																																																																																																																																																																																																																																																																																						
 				<div class="method-definition">
 											<span class="method-result">HTML_Template_xFastTemplate2</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
@@ -201,7 +201,7 @@
 				<div class="method-definition">
 											<span class="method-result">string</span>
 										<a href="#build_mysql_query" title="details" class="method-name">build_mysql_query</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$table_values</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">&quot;&quot;</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$table_values</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">&quot;&quot;</span>])
 									</div>
 														
 				<div class="method-definition">
@@ -262,6 +262,12 @@
 											<span class="method-result">nothing</span>
 										<a href="#get_all" title="details" class="method-name">get_all</a>
 											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$aMySQL_result</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$storage</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#get_all_by_query" title="details" class="method-name">get_all_by_query</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$storage</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$table_values</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span>)
 									</div>
 														
 				<div class="method-definition">
@@ -787,7 +793,7 @@
 		<span class="method-name">
 			build_mysql_query
 		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$table_values</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">&quot;&quot;</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$table_values</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span> = <span class="var-default">&quot;&quot;</span>])
 			</div>
 	
 			<ul class="parameters">
@@ -799,7 +805,7 @@
 				<span class="var-name">$table_name</span><span class="var-description">: The tablename</span>			</li>
 					<li>
 				<span class="var-type">array</span>
-				<span class="var-name">$table_values</span><span class="var-description">: Assoc. array, that holds the field names corr. to the values</span>			</li>
+				<span class="var-name">&$table_values</span><span class="var-description">: Assoc. array, that holds the field names corr. to the values</span>			</li>
 					<li>
 				<span class="var-type">string</span>
 				<span class="var-name">$condition</span><span class="var-description">: The condition</span>			</li>
@@ -1111,8 +1117,49 @@
 		
 			
 	</div>
-<a name="methodget_by_source" id="get_by_source"><!-- --></a>
+<a name="methodget_all_by_query" id="get_all_by_query"><!-- --></a>
 <div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_all_by_query</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1812">1812</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Build an assoc. array within the results of a mySQl query.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			get_all_by_query
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$storage</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$table_values</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$condition</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">&$db</span><span class="var-description">: A valid DB-Connector. Passed by reference.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$storage</span><span class="var-description">: A linear array that holds the results. Passed by reference.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$table_name</span><span class="var-description">: The (mySQL-) table(-name).</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$table_values</span><span class="var-description">: Assoc. array, that holds the field names corr. to the values. Passed by reference.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$condition</span><span class="var-description">: The (mySQL-) query condition.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_by_source" id="get_by_source"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_by_source</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a300">300</a></span>)
@@ -1136,7 +1183,7 @@
 			
 	</div>
 <a name="methodget_by_template" id="get_by_template"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_by_template</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a270">270</a></span>)
@@ -1169,7 +1216,7 @@
 			
 	</div>
 <a name="methodget_masterTable" id="get_masterTable"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_masterTable</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a436">436</a></span>)
@@ -1195,7 +1242,7 @@
 			
 	</div>
 <a name="methodget_masterTable2" id="get_masterTable2"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_masterTable2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a535">535</a></span>)
@@ -1238,7 +1285,7 @@
 			
 	</div>
 <a name="methodget_modules" id="get_modules"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_modules</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1614">1614</a></span>)
@@ -1274,7 +1321,7 @@
 			
 	</div>
 <a name="methodget_section" id="get_section"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_section</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1650">1650</a></span>)
@@ -1314,7 +1361,7 @@
 			
 	</div>
 <a name="methodget_sequence" id="get_sequence"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_sequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a355">355</a></span>)
@@ -1354,7 +1401,7 @@
 			
 	</div>
 <a name="methodget_xhtml1_css_link" id="get_xhtml1_css_link"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_xhtml1_css_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1220">1220</a></span>)
@@ -1385,7 +1432,7 @@
 			
 	</div>
 <a name="methodget_xhtml1_js_link" id="get_xhtml1_js_link"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">get_xhtml1_js_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1212">1212</a></span>)
@@ -1413,7 +1460,7 @@
 			
 	</div>
 <a name="methodqf_xhtml1_hidden" id="qf_xhtml1_hidden"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">qf_xhtml1_hidden</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1208">1208</a></span>)
@@ -1446,7 +1493,7 @@
 			
 	</div>
 <a name="methodregister_external" id="register_external"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">register_external</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1582">1582</a></span>)
@@ -1477,7 +1524,7 @@
 			
 	</div>
 <a name="methodregister_modfiles" id="register_modfiles"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">register_modfiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1449">1449</a></span>)
@@ -1512,7 +1559,7 @@
 			
 	</div>
 <a name="methodregister_templatefiles" id="register_templatefiles"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">register_templatefiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1542">1542</a></span>)
@@ -1544,7 +1591,7 @@
 			
 	</div>
 <a name="methodregister_wb_values_to_js" id="register_wb_values_to_js"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">register_wb_values_to_js</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1387">1387</a></span>)
@@ -1575,7 +1622,7 @@
 			
 	</div>
 <a name="methodremoveComments" id="removeComments"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">removeComments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a647">647</a></span>)
@@ -1613,7 +1660,7 @@
 			
 	</div>
 <a name="methodremove_comments" id="remove_comments"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">remove_comments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a670">670</a></span>)
@@ -1646,7 +1693,7 @@
 			
 	</div>
 <a name="methodremove_unusedMarkers" id="remove_unusedMarkers"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">remove_unusedMarkers</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1196">1196</a></span>)
@@ -1676,7 +1723,7 @@
 			
 	</div>
 <a name="methodrenderSequence" id="renderSequence"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">renderSequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a945">945</a></span>)
@@ -1701,7 +1748,7 @@
 			
 	</div>
 <a name="methodrenderTemplate" id="renderTemplate"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">renderTemplate</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a859">859</a></span>)
@@ -1735,7 +1782,7 @@
 			
 	</div>
 <a name="methodsetMarker" id="setMarker"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">setMarker</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1090">1090</a></span>)
@@ -1768,7 +1815,7 @@
 			
 	</div>
 <a name="methodshow_menu2" id="show_menu2"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">show_menu2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1325">1325</a></span>)
@@ -1800,7 +1847,7 @@
 			
 	</div>
 <a name="method_build_xhtml1_img_tag" id="_build_xhtml1_img_tag"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">_build_xhtml1_img_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1247">1247</a></span>)
@@ -1832,7 +1879,7 @@
 			
 	</div>
 <a name="method_define_error_msg" id="_define_error_msg"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">_define_error_msg</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a765">765</a></span>)
@@ -1859,7 +1906,7 @@
 			
 	</div>
 <a name="method_error" id="_error"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">_error</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a737">737</a></span>)
@@ -1897,7 +1944,7 @@
 			
 	</div>
 <a name="method_get_xhtml1_meta_tag" id="_get_xhtml1_meta_tag"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">_get_xhtml1_meta_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1231">1231</a></span>)
@@ -1932,7 +1979,7 @@
 			
 	</div>
 <a name="method__buildPattern" id="__buildPattern"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">__buildPattern</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1115">1115</a></span>)
@@ -1963,7 +2010,7 @@
 			
 	</div>
 <a name="method__get_modules_files" id="__get_modules_files"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">__get_modules_files</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1687">1687</a></span>)
@@ -1991,7 +2038,7 @@
 			
 	</div>
 <a name="method__mb_sql_regcase" id="__mb_sql_regcase"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<span class="method-title">__mb_sql_regcase</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1129">1129</a></span>)
@@ -2025,7 +2072,7 @@
 			
 	</div>
 <a name="method__parseStr" id="__parseStr"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<span class="method-title">__parseStr</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a714">714</a></span>)
@@ -2068,7 +2115,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Tue, 11 May 2010 13:50:42 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 13 May 2010 15:27:56 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

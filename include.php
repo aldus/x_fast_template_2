@@ -1728,7 +1728,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 *	@return	string	The mySQL query-string or NULL if no type march.
 	 *
 	 */
-	public function build_mysql_query ($type, $table_name, $table_values, $condition="") {
+	public function build_mysql_query ($type, $table_name, &$table_values, $condition="") {
 		
 		switch( strtolower($type) ) {
 			
@@ -1778,7 +1778,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 	$var = array(
 	 		"\n" => "\\n",
 	 		"\r" => "\\r",
-	 		"\"" => "&#34;"
+	 		"\"" => "&#34"
 	 	);
 	 	
 	 	$aStr = str_replace(array_keys($var), array_values($var), $aStr);
@@ -1797,6 +1797,25 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	public function get_all(&$aMySQL_result, &$storage) {
 		while ( !false == ($data = $aMySQL_result->fetchRow( MYSQL_ASSOC ) ) ) $storage[] = $data;
+	}
+	
+	/**
+	 *	Build an assoc. array within the results of a mySQl query.
+	 *
+	 *	@param	mixed	A valid DB-Connector. Passed by reference.
+	 *	@param	array	A linear array that holds the results. Passed by reference.
+	 *	@param	string	The (mySQL-) table(-name).
+	 *	@param	array	Assoc. array, that holds the field names corr. to the values. Passed by reference.
+	 *	@param	string	The (mySQL-) query condition.
+	 *
+	 */
+	public function get_all_by_query( &$db, &$storage, $table_name, &$table_values, $condition) {
+		
+		$query = $this->build_mysql_query("select", $table_name, $table_values, $condition);
+		
+		$result = $db->query( $query );
+		
+		if ($result->numRows() > 0) $this->get_all($result, $storage);
 	}
 }
 /** End of Class */	
