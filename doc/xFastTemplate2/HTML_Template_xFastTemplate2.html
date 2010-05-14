@@ -129,9 +129,17 @@
 								</div>
 		<div class="info-box-body">
 			<div class="var-summary">
-																																																																								<div class="var-title">
+																																																																																								<div class="var-title">
 					<span class="var-type">mixed</span>
 					<a href="#$cachefolder" title="details" class="var-name">$cachefolder</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$default_path" title="details" class="var-name">$default_path</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$default_url" title="details" class="var-name">$default_url</a>
 				</div>
 																<div class="var-title">
 					<span class="var-type">mixed</span>
@@ -173,7 +181,7 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																																																																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																																																																																																																																																																														
 				<div class="method-definition">
 											<span class="method-result">HTML_Template_xFastTemplate2</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
@@ -291,7 +299,7 @@
 				<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#get_masterTable2" title="details" class="method-name">get_masterTable2</a>
-											(<span class="var-type">aTemplatePath</span>&nbsp;<span class="var-name">$aTemplatePath</span>, <span class="var-type">aHeadArray</span>&nbsp;<span class="var-name">$aHeadArray</span>, <span class="var-type">aTR_info</span>&nbsp;<span class="var-name">$aTR_Info</span>, <span class="var-type">aTD_info</span>&nbsp;<span class="var-name">$aTD_Info</span>, [<span class="var-type">aTabelEnd</span>&nbsp;<span class="var-name">$aTableEnd</span> = <span class="var-default">array()</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$aTemplatePath</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aHeadArray</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTR_Info</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTD_Info</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$aTableEnd</span> = <span class="var-default">array()</span>])
 									</div>
 														
 				<div class="method-definition">
@@ -385,6 +393,12 @@
 									</div>
 														
 				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#resolve_path" title="details" class="method-name">resolve_path</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$aPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$aAlternativePath</span> = <span class="var-default">&quot;&quot;</span>])
+									</div>
+														
+				<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#setMarker" title="details" class="method-name">setMarker</a>
 											([<span class="var-type">string</span>&nbsp;<span class="var-name">$aBeginMarker</span> = <span class="var-default">&quot;{&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$aEndMarker</span> = <span class="var-default">&quot;}&quot;</span>])
@@ -475,6 +489,52 @@
 <p class="short-description">Public Variable holds the name of the cache-folder, incl. ending slash</p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.6.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$default_path" id="$default_path"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$default_path</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a257">257</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Public var that holds a default (local) path, e.g. WB_PATH from WebsiteBaker.</p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 0.4.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$default_url" id="$default_url"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$default_url</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a248">248</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Public var that holds a default url, e.g. WB_URL from WebsiteBaker.</p>
+	<ul class="tags">
+				<li><span class="field">since:</span> 0.4.0</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -665,7 +725,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a246">246</a></span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a264">264</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -689,7 +749,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">Destructor __destruct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a256">256</a></span>)
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a275">275</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -713,7 +773,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">build_attributes</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1260">1260</a></span>)
+		<span class="method-title">build_attributes</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1279">1279</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -741,7 +801,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">build_css_condition</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1282">1282</a></span>)
+		<span class="method-title">build_css_condition</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1301">1301</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -778,7 +838,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">build_mysql_query</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1731">1731</a></span>)
+		<span class="method-title">build_mysql_query</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1750">1750</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -817,7 +877,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">build_preloader</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1254">1254</a></span>)
+		<span class="method-title">build_preloader</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1273">1273</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -846,7 +906,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">build_xhtml1_metaTags</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1238">1238</a></span>)
+		<span class="method-title">build_xhtml1_metaTags</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1257">1257</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -878,7 +938,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">capture_echo</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1301">1301</a></span>)
+		<span class="method-title">capture_echo</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1320">1320</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -909,7 +969,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">clean_up_str</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1777">1777</a></span>)
+		<span class="method-title">clean_up_str</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1796">1796</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -939,7 +999,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">direct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a616">616</a></span>)
+		<span class="method-title">direct</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a635">635</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -969,7 +1029,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">findClasses</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a798">798</a></span>)
+		<span class="method-title">findClasses</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a817">817</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -999,7 +1059,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">findIds</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a810">810</a></span>)
+		<span class="method-title">findIds</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a829">829</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1029,7 +1089,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getBlocks</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1154">1154</a></span>)
+		<span class="method-title">getBlocks</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1173">1173</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1061,7 +1121,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">getKeywords</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a684">684</a></span>)
+		<span class="method-title">getKeywords</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a703">703</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1087,7 +1147,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_all</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1798">1798</a></span>)
+		<span class="method-title">get_all</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1817">1817</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1121,7 +1181,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_all_by_query</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1812">1812</a></span>)
+		<span class="method-title">get_all_by_query</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1831">1831</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1162,7 +1222,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_by_source</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a300">300</a></span>)
+		<span class="method-title">get_by_source</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a319">319</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1186,7 +1246,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_by_template</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a270">270</a></span>)
+		<span class="method-title">get_by_template</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a289">289</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1219,7 +1279,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_masterTable</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a436">436</a></span>)
+		<span class="method-title">get_masterTable</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a455">455</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1245,12 +1305,12 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_masterTable2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a535">535</a></span>)
+		<span class="method-title">get_masterTable2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a554">554</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Another way to build a Table</p>
-<p class="description"><p>Form of the template is a little bit difference to the  below one:</p><p>1[0] Comment and/or additional informations - will be ignored while parsing  2[1] Head - Table begin  3[2] Comment and/or additional informations - will be ignored while parsing  4[3] TR - informations, mostly a class, define for all TD inside  5[4] Comment and/or additional informations - will be ignored while parsing  6[5] TD - informations, a two-dimensional Array  7[6] Comment and/or additional informations - will be ignored while parsing  8[7] Table end and additional informations of some HTML/XHTML1  x[x-1] Following lines will be ignored ...</p><p>Example: <ol><li>&lt;!-- [Version: 0.4.0] - [Date: 2007-04-08] - [Author: Dietrich Roland Pehlke] - [Package: xClassLib/@private] --&gt;</li><li>&lt;table class={class}&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;tr class={class}&gt;{content}&lt;/tr&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;td class={class}&gt;{content}&lt;/td&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;/table&gt;</li></ol> 10  11 Client: Dr. Vieselmeier - Germany  12 Current web-version 2.0  13  14 Example from the xClassLib for &quot;Haddewig CCC&quot;  15 @2007 Stefan Haddewig &amp; Dietrich Roland Pehlke</p><p>Notice: there is no Table-Caption in this kind of Table;  also a Table footer is missing. Could be added inside in the template.</p></p>
+<p class="description"><p>Form of the template is a little bit difference to the 	below one:</p><p>1[0] Comment and/or additional informations - will be ignored while parsing 	2[1] Head - Table begin 	3[2] Comment and/or additional informations - will be ignored while parsing 	4[3] TR - informations, mostly a class, define for all TD inside 	5[4] Comment and/or additional informations - will be ignored while parsing 	6[5] TD - informations, a two-dimensional Array 	7[6] Comment and/or additional informations - will be ignored while parsing 	8[7] Table end and additional informations of some HTML/XHTML1 	x[x-1] Following lines will be ignored ...</p><p>Example: <ol><li>&lt;!-- [Version: 0.4.0] - [Date: 2007-04-08] - [Author: Dietrich Roland Pehlke] - [Package: xClassLib/@private] --&gt;</li><li>&lt;table class={class}&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;tr class={class}&gt;{content}&lt;/tr&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;td class={class}&gt;{content}&lt;/td&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;/table&gt;</li></ol> 10  11 Client: Dr. Vieselmeier - Germany  12 Current web-version 2.0  13  14 Example from the xClassLib for &quot;Haddewig CCC&quot;  15 @2007 Stefan Haddewig &amp; Dietrich Roland Pehlke</p><p>Notice: there is no Table-Caption in this kind of Table; 	also a Table footer is missing. Could be added inside in the template.</p></p>
 	<ul class="tags">
 				<li><span class="field">since:</span> 0.4.0 Beta</li>
 				<li><span class="field">access:</span> public</li>
@@ -1261,25 +1321,25 @@
 		<span class="method-name">
 			get_masterTable2
 		</span>
-					(<span class="var-type">aTemplatePath</span>&nbsp;<span class="var-name">$aTemplatePath</span>, <span class="var-type">aHeadArray</span>&nbsp;<span class="var-name">$aHeadArray</span>, <span class="var-type">aTR_info</span>&nbsp;<span class="var-name">$aTR_Info</span>, <span class="var-type">aTD_info</span>&nbsp;<span class="var-name">$aTD_Info</span>, [<span class="var-type">aTabelEnd</span>&nbsp;<span class="var-name">$aTableEnd</span> = <span class="var-default">array()</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$aTemplatePath</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aHeadArray</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTR_Info</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$aTD_Info</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$aTableEnd</span> = <span class="var-default">array()</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type">aTemplatePath</span>
-				<span class="var-name">$aTemplatePath</span><span class="var-description">: string    Filename of the Template</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$aTemplatePath</span><span class="var-description">: Filename of the Template</span>			</li>
 					<li>
-				<span class="var-type">aHeadArray</span>
-				<span class="var-name">$aHeadArray</span><span class="var-description">: array    The Table-Begin</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$aHeadArray</span><span class="var-description">: The Table-Begin</span>			</li>
 					<li>
-				<span class="var-type">aTR_info</span>
-				<span class="var-name">$aTR_Info</span><span class="var-description">: array    The TR - Informations</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$aTR_Info</span><span class="var-description">: The TR - Informations</span>			</li>
 					<li>
-				<span class="var-type">aTD_info</span>
-				<span class="var-name">$aTD_Info</span><span class="var-description">: array    Two-Dimensional Array with the TD-Records</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$aTD_Info</span><span class="var-description">: Two-Dimensional Array with the TD-Records</span>			</li>
 					<li>
-				<span class="var-type">aTabelEnd</span>
-				<span class="var-name">$aTableEnd</span><span class="var-description">: array    Holds the informations for the end of the Records</span>			</li>
+				<span class="var-type">array</span>
+				<span class="var-name">$aTableEnd</span><span class="var-description">: Holds the informations for the end of the Records</span>			</li>
 				</ul>
 		
 			
@@ -1288,7 +1348,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_modules</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1614">1614</a></span>)
+		<span class="method-title">get_modules</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1633">1633</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1324,7 +1384,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_section</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1650">1650</a></span>)
+		<span class="method-title">get_section</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1669">1669</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1364,7 +1424,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_sequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a355">355</a></span>)
+		<span class="method-title">get_sequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a374">374</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1404,7 +1464,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_xhtml1_css_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1220">1220</a></span>)
+		<span class="method-title">get_xhtml1_css_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1239">1239</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1435,7 +1495,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">get_xhtml1_js_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1212">1212</a></span>)
+		<span class="method-title">get_xhtml1_js_link</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1231">1231</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1463,7 +1523,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">qf_xhtml1_hidden</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1208">1208</a></span>)
+		<span class="method-title">qf_xhtml1_hidden</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1227">1227</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1496,7 +1556,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">register_external</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1582">1582</a></span>)
+		<span class="method-title">register_external</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1601">1601</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1527,7 +1587,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">register_modfiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1449">1449</a></span>)
+		<span class="method-title">register_modfiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1468">1468</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1562,7 +1622,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">register_templatefiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1542">1542</a></span>)
+		<span class="method-title">register_templatefiles</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1561">1561</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1594,7 +1654,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">register_wb_values_to_js</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1387">1387</a></span>)
+		<span class="method-title">register_wb_values_to_js</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1406">1406</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1625,7 +1685,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">removeComments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a647">647</a></span>)
+		<span class="method-title">removeComments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a666">666</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1663,7 +1723,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">remove_comments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a670">670</a></span>)
+		<span class="method-title">remove_comments</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a689">689</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1696,7 +1756,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">remove_unusedMarkers</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1196">1196</a></span>)
+		<span class="method-title">remove_unusedMarkers</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1215">1215</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1726,7 +1786,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">renderSequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a945">945</a></span>)
+		<span class="method-title">renderSequence</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a964">964</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1751,7 +1811,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">renderTemplate</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a859">859</a></span>)
+		<span class="method-title">renderTemplate</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a878">878</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1781,11 +1841,45 @@
 		
 			
 	</div>
-<a name="methodsetMarker" id="setMarker"><!-- --></a>
+<a name="methodresolve_path" id="resolve_path"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">setMarker</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1090">1090</a></span>)
+		<span class="method-title">resolve_path</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1851">1851</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Looks for an (local) file, and if exists returns the absolute url, 	otherwise the alternate one.</p>
+<p class="description"><p>Makes use of class-vars default_url and default_path.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Resulting url (absolute).</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			resolve_path
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$aPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$aAlternativePath</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$aPath</span><span class="var-description">: Any local path.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$aAlternativePath</span><span class="var-description">: Any other one.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMarker" id="setMarker"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMarker</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1109">1109</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1815,10 +1909,10 @@
 			
 	</div>
 <a name="methodshow_menu2" id="show_menu2"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">show_menu2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1325">1325</a></span>)
+		<span class="method-title">show_menu2</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1344">1344</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1847,10 +1941,10 @@
 			
 	</div>
 <a name="method_build_xhtml1_img_tag" id="_build_xhtml1_img_tag"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">_build_xhtml1_img_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1247">1247</a></span>)
+		<span class="method-title">_build_xhtml1_img_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1266">1266</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1879,10 +1973,10 @@
 			
 	</div>
 <a name="method_define_error_msg" id="_define_error_msg"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">_define_error_msg</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a765">765</a></span>)
+		<span class="method-title">_define_error_msg</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a784">784</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1906,10 +2000,10 @@
 			
 	</div>
 <a name="method_error" id="_error"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">_error</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a737">737</a></span>)
+		<span class="method-title">_error</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a756">756</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1944,10 +2038,10 @@
 			
 	</div>
 <a name="method_get_xhtml1_meta_tag" id="_get_xhtml1_meta_tag"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">_get_xhtml1_meta_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1231">1231</a></span>)
+		<span class="method-title">_get_xhtml1_meta_tag</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1250">1250</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -1979,10 +2073,10 @@
 			
 	</div>
 <a name="method__buildPattern" id="__buildPattern"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">__buildPattern</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1115">1115</a></span>)
+		<span class="method-title">__buildPattern</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1134">1134</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -2010,10 +2104,10 @@
 			
 	</div>
 <a name="method__get_modules_files" id="__get_modules_files"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">__get_modules_files</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1687">1687</a></span>)
+		<span class="method-title">__get_modules_files</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1706">1706</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -2038,10 +2132,10 @@
 			
 	</div>
 <a name="method__mb_sql_regcase" id="__mb_sql_regcase"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">__mb_sql_regcase</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1129">1129</a></span>)
+		<span class="method-title">__mb_sql_regcase</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a1148">1148</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -2072,10 +2166,10 @@
 			
 	</div>
 <a name="method__parseStr" id="__parseStr"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">__parseStr</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a714">714</a></span>)
+		<span class="method-title">__parseStr</span> (line <span class="line-number"><a href="../__filesource/fsource_xFastTemplate2__include.php.html#a733">733</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -2115,7 +2209,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 13 May 2010 15:27:56 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Fri, 14 May 2010 15:19:28 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

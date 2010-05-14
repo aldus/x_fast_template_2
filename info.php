@@ -1,12 +1,15 @@
 <?php
 
 /**
- *	@version	0.3.2
- *	@date		2010-05-13
+ *	@version	0.4.0
+ *	@date		2010-05-14
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
  *
- *	0.3.2	2010-05-13	Add method "get_all_by_query"
+ *	0.4.0	2010-05-14	Add public method "resolve_path" and two new class-properties
+ *						'default_path' and 'default_url'.
+ *
+ *	0.3.2	2010-05-13	Add public method "get_all_by_query"
  *
  *	0.3.1	2010-05-11	Bugfix/Addition inside method 'clean_up_str' for double-quotes and JS.
  *

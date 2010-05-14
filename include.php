@@ -239,13 +239,32 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	public $cachefolder = 'xft2_cache/';
 	
 	/**
+	 *	Public var that holds a default url, e.g. WB_URL from WebsiteBaker.
+	 *
+	 *	@type	string
+	 *	@since	0.4.0
+	 *
+	 */
+	public $default_url = "";
+	
+	/**
+	 *	Public var that holds a default (local) path, e.g. WB_PATH from WebsiteBaker.
+	 *
+	 *	@type	string
+	 *	@since	0.4.0
+	 *
+	 */
+	public $default_path = "";
+	
+	/**
 	 *	Constructor of the class
 	 *
 	 * 
 	 */
 	public function __construct() {
 		$this->_define_error_msg();
-	
+		if (defined('WB_PATH'))	$this->default_path	= WB_PATH;
+		if (defined('WB_URL'))	$this->default_url	= WB_URL;
 	}
 	
 	/**
@@ -483,54 +502,54 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
-	* Another way to build a Table
-	*
-	* Form of the template is a little bit difference to the 
-	* below one:
-	*
-	* 1[0] Comment and/or additional informations - will be ignored while parsing
-	* 2[1] Head - Table begin
-	* 3[2] Comment and/or additional informations - will be ignored while parsing
-	* 4[3] TR - informations, mostly a class, define for all TD inside
-	* 5[4] Comment and/or additional informations - will be ignored while parsing
-	* 6[5] TD - informations, a two-dimensional Array
-	* 7[6] Comment and/or additional informations - will be ignored while parsing
-	* 8[7] Table end and additional informations of some HTML/XHTML1
-	* x[x-1] Following lines will be ignored ...
-	*
-	*
-	* Example:
-	*  1 <!-- [Version: 0.4.0] - [Date: 2007-04-08] - [Author: Dietrich Roland Pehlke] - [Package: xClassLib/@private] -->
-	*  2 <table class={class}>
-	*  3 <!-- -->
-	*  4 <tr class={class}>{content}</tr>
-	*  5 <!-- -->
-	*  6 <td class={class}>{content}</td>
-	*  7 <!-- -->
-	*  8 </table>
-	*  9
-	* 10
-	* 11 Client: Dr. Vieselmeier - Germany
-	* 12 Current web-version 2.0
-	* 13
-	* 14 Example from the xClassLib for "Haddewig CCC" 
-	* 15 @2007 Stefan Haddewig & Dietrich Roland Pehlke
-	*
-	*
-	*
-	* Notice: there is no Table-Caption in this kind of Table;
-	* also a Table footer is missing. Could be added inside in the template.
-	*
-	* @param aTemplatePath	string	Filename of the Template
-	* @param aHeadArray		array	The Table-Begin 
-	* @param aTR_info		array	The TR - Informations
-	* @param aTD_info		array	Two-Dimensional Array with the TD-Records
-	* @param aTabelEnd		array	Holds the informations for the end of the Records
-	*
-	* @date	2004-04-08 - Eastern
-	* @since 0.4.0 Beta
-	*
-	*/
+	 *	Another way to build a Table
+	 *
+	 *	Form of the template is a little bit difference to the 
+	 *	below one:
+	 *
+	 *	1[0] Comment and/or additional informations - will be ignored while parsing
+	 *	2[1] Head - Table begin
+	 *	3[2] Comment and/or additional informations - will be ignored while parsing
+	 *	4[3] TR - informations, mostly a class, define for all TD inside
+	 *	5[4] Comment and/or additional informations - will be ignored while parsing
+	 *	6[5] TD - informations, a two-dimensional Array
+	 *	7[6] Comment and/or additional informations - will be ignored while parsing
+	 *	8[7] Table end and additional informations of some HTML/XHTML1
+	 *	x[x-1] Following lines will be ignored ...
+	 *
+	 *
+	 * Example:
+	 *	1 <!-- [Version: 0.4.0] - [Date: 2007-04-08] - [Author: Dietrich Roland Pehlke] - [Package: xClassLib/@private] -->
+	 *	2 <table class={class}>
+	 *	3 <!-- -->
+	 *	4 <tr class={class}>{content}</tr>
+	 *	5 <!-- -->
+	 *	6 <td class={class}>{content}</td>
+	 *	7 <!-- -->
+	 *	8 </table>
+	 *	9
+	 * 10
+	 * 11 Client: Dr. Vieselmeier - Germany
+	 * 12 Current web-version 2.0
+	 * 13
+	 * 14 Example from the xClassLib for "Haddewig CCC" 
+	 * 15 @2007 Stefan Haddewig & Dietrich Roland Pehlke
+	 *
+	 *
+	 *
+	 *	Notice: there is no Table-Caption in this kind of Table;
+	 *	also a Table footer is missing. Could be added inside in the template.
+	 *
+	 *	@param	string	Filename of the Template
+	 *	@param	array	The Table-Begin 
+	 *	@param	array	The TR - Informations
+	 *	@param	array	Two-Dimensional Array with the TD-Records
+	 *	@param	array	Holds the informations for the end of the Records
+	 *
+	 * @date	2004-04-08 - Eastern
+	 * @since 0.4.0 Beta
+	 *
+	 */
 	
 	public function get_masterTable2 ($aTemplatePath, $aHeadArray, $aTR_Info, $aTD_Info, $aTableEnd= Array() ) {
 		
@@ -1816,6 +1835,25 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		$result = $db->query( $query );
 		
 		if ($result->numRows() > 0) $this->get_all($result, $storage);
+	}
+	
+	/**
+	 *	Looks for an (local) file, and if exists returns the absolute url,
+	 *	otherwise the alternate one.
+	 *	Makes use of class-vars default_url and default_path.
+	 *
+	 *	@param	string	Any local path.
+	 *	@param	string	Any other one.
+	 *
+	 *	@return string	Resulting url (absolute).
+	 *
+	 */
+	public function resolve_path ($aPath, $aAlternativePath="") {
+		$temp = $this->default_path.$aPath;
+		return (true === file_exists($temp)) 
+			? $this->default_url.$aPath 
+			: $this->default_url.aAlternativePath
+			;
 	}
 }
 /** End of Class */	
