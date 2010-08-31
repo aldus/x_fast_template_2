@@ -101,6 +101,7 @@
 	<ul class="tags">
 				<li><span class="field">author:</span> Dietrich Roland Pehlke</li>
 				<li><span class="field">version:</span> 0.7.1 rc1</li>
+				<li><span class="field">date:</span> 2010-05-11</li>
 				<li><span class="field">license:</span> free</li>
 			</ul>
 		<p class="notes">
@@ -497,6 +498,7 @@
 <p class="short-description">Public Variable holds the name of the cache-folder, incl. ending slash</p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.6.0</li>
+				<li><span class="field">type:</span> string</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -521,6 +523,7 @@
 <p class="description"><p>At this time only 'german' (default) and 'english' is supported 	but as a variable you can add more.</p></p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.2.0</li>
+				<li><span class="field">type:</span> string</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -545,6 +548,7 @@
 <p class="description"><p>Default setting is &quot;{&quot;</p></p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.1.2</li>
+				<li><span class="field">type:</span> string</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -569,6 +573,7 @@
 <p class="description"><p>Default setting is &quot;}&quot;</p></p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.1.2</li>
+				<li><span class="field">type:</span> string</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -616,6 +621,7 @@
 <p class="short-description">variable holds the current version.</p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.1.2</li>
+				<li><span class="field">type:</span> string</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -640,6 +646,7 @@
 <p class="description"><p>Form is: 	'language' =&gt; Array { 		'headline' =&gt; 'Any string that appearce at the top', 		'noErrorTempl' =&gt; 'The message comes up if no template for the error isn't found',</p></p>
 	<ul class="tags">
 				<li><span class="field">version:</span> 0.2.0</li>
+				<li><span class="field">type:</span> array</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -761,6 +768,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -789,6 +797,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -823,6 +832,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> MySQL</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -860,6 +870,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -888,6 +899,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -919,6 +931,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -947,6 +960,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> Javascript</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1123,6 +1137,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> MySQL</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1154,6 +1169,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> MySQL</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1279,6 +1295,7 @@
 <p class="short-description">Another way to build a Table</p>
 <p class="description"><p>Form of the template is a little bit difference to the 	below one:</p><p>1[0] Comment and/or additional informations - will be ignored while parsing 	2[1] Head - Table begin 	3[2] Comment and/or additional informations - will be ignored while parsing 	4[3] TR - informations, mostly a class, define for all TD inside 	5[4] Comment and/or additional informations - will be ignored while parsing 	6[5] TD - informations, a two-dimensional Array 	7[6] Comment and/or additional informations - will be ignored while parsing 	8[7] Table end and additional informations of some HTML/XHTML1 	x[x-1] Following lines will be ignored ...</p><p>Example: <ol><li>&lt;!-- [Version: 0.4.0] - [Date: 2007-04-08] - [Author: Dietrich Roland Pehlke] - [Package: xClassLib/@private] --&gt;</li><li>&lt;table class={class}&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;tr class={class}&gt;{content}&lt;/tr&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;td class={class}&gt;{content}&lt;/td&gt;</li><li>&lt;!-- --&gt;</li><li>&lt;/table&gt;</li></ol> 10  11 Client: Dr. Vieselmeier - Germany  12 Current web-version 2.0  13  14 Example from the xClassLib for &quot;Haddewig CCC&quot;  15 @2007 Stefan Haddewig &amp; Dietrich Roland Pehlke</p><p>Notice: there is no Table-Caption in this kind of Table; 	also a Table footer is missing. Could be added inside in the template.</p></p>
 	<ul class="tags">
+				<li><span class="field">date:</span> 2004-04-08 - Eastern</li>
 				<li><span class="field">since:</span> 0.4.0 Beta</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -1320,6 +1337,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1351,6 +1369,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1428,6 +1447,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1459,6 +1479,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1487,6 +1508,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1518,6 +1540,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1546,6 +1569,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1577,6 +1601,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1605,6 +1630,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1793,6 +1819,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1857,6 +1884,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1885,6 +1913,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -1981,6 +2010,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -2077,6 +2107,7 @@
 	
 	<!-- ========== Info from phpDoc block ========= -->
 	<ul class="tags">
+				<li><span class="field">suite:</span> WebsiteBaker</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
@@ -2204,7 +2235,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Tue, 31 Aug 2010 11:11:34 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Tue, 31 Aug 2010 11:59:25 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>
