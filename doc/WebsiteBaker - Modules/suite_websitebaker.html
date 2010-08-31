@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos  -->
+			<title>Docs For Class suite_websitebaker</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+						<script src="../media/lib/classTree.js"></script>
+												<script language="javascript" type="text/javascript">
+				var imgPlus = new Image();
+				var imgMinus = new Image();
+				imgPlus.src = "../media/images/plus.png";
+				imgMinus.src = "../media/images/minus.png";
+				
+				function showNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgMinus.src;
+					oTable.style.display = "block";
+				}
+				
+				function hideNode(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+							var oImg = document.layers["img" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+							var oImg = document.all["img" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+							var oImg = document.getElementById("img" + Node);
+									break;
+							}
+					oImg.src = imgPlus.src;
+					oTable.style.display = "none";
+				}
+				
+				function nodeIsVisible(Node){
+							switch(navigator.family){
+								case 'nn4':
+									// Nav 4.x code fork...
+							var oTable = document.layers["span" + Node];
+									break;
+								case 'ie4':
+									// IE 4/5 code fork...
+							var oTable = document.all["span" + Node];
+									break;
+								case 'gecko':
+									// Standards Compliant code fork...
+							var oTable = document.getElementById("span" + Node);
+									break;
+							}
+					return (oTable && oTable.style.display == "block");
+				}
+				
+				function toggleNodeVisibility(Node){
+					if (nodeIsVisible(Node)){
+						hideNode(Node);
+					}else{
+						showNode(Node);
+					}
+				}
+			</script>
+					</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class suite_websitebaker</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+		<p class="notes">
+			Located in <a class="field" href="_suites---websitebaker---suite_websitebaker.php.html">/suites/websitebaker/suite_websitebaker.php</a> (line <span class="field"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a5">5</a></span>)
+		</p>
+		
+				
+		<pre><a href="../WebsiteBaker - Modules/suite.html">suite</a>
+   |
+   --suite_websitebaker</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$default_path" title="details" class="var-name">$default_path</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$default_url" title="details" class="var-name">$default_url</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																						
+				<div class="method-definition">
+											<span class="method-result">suite_websitebaker</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#capture_echo" title="details" class="method-name">capture_echo</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$aJobStr</span> = <span class="var-default">&quot;&quot;</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#get_modules" title="details" class="method-name">get_modules</a>
+											(<span class="var-type">object A</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$page_id</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#get_section" title="details" class="method-name">get_section</a>
+											(<span class="var-type">db</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">section_id</span>&nbsp;<span class="var-name">$section_id</span>, <span class="var-type">results</span>&nbsp;<span class="var-name">&$result_array</span>, [<span class="var-type">not_found</span>&nbsp;<span class="var-name">$not_found_msg</span> = <span class="var-default">&quot;&lt;br /&gt;Section within id &lt;b&gt;%s&lt;/b&gt; not found.&quot;</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#register_external" title="details" class="method-name">register_external</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$files</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#register_modfiles" title="details" class="method-name">register_modfiles</a>
+											(<span class="var-type">object A</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$page_id</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#register_templatefiles" title="details" class="method-name">register_templatefiles</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">&$files</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#register_wb_values_to_js" title="details" class="method-name">register_wb_values_to_js</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#resolve_path" title="details" class="method-name">resolve_path</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$aPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$aAlternativePath</span> = <span class="var-default">&quot;&quot;</span>])
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#show_menu2" title="details" class="method-name">show_menu2</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">&$options</span>)
+									</div>
+														
+				<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__get_modules_files" title="details" class="method-name">__get_modules_files</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$aPath</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$default_path" id="$default_path"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$default_path</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a7">7</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$default_url" id="$default_url"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$default_url</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a8">8</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a10">10</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">suite_websitebaker</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcapture_echo" id="capture_echo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">capture_echo</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a356">356</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			capture_echo
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$aJobStr</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$aJobStr</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_modules" id="get_modules"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_modules</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a119">119</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> A linear list within the modul-names.</li>
+				<li><span class="field">version:</span> 0.1.5</li>
+				<li><span class="field">since:</span> 0.1.5</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			get_modules
+		</span>
+					(<span class="var-type">object A</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$page_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object A</span>
+				<span class="var-name">&$db</span><span class="var-description">: valid databaseinstance - pass by reference!</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page_id</span><span class="var-description">: Any page_id.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_section" id="get_section"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get_section</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a35">35</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> true|false if failed</li>
+				<li><span class="field">since:</span> 0.2.0</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			get_section
+		</span>
+					(<span class="var-type">db</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">section_id</span>&nbsp;<span class="var-name">$section_id</span>, <span class="var-type">results</span>&nbsp;<span class="var-name">&$result_array</span>, [<span class="var-type">not_found</span>&nbsp;<span class="var-name">$not_found_msg</span> = <span class="var-default">&quot;&lt;br /&gt;Section within id &lt;b&gt;%s&lt;/b&gt; not found.&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">db</span>
+				<span class="var-name">&$db</span><span class="var-description">: object    Any database-connector instance.</span>			</li>
+					<li>
+				<span class="var-type">section_id</span>
+				<span class="var-name">$section_id</span><span class="var-description">: mixed    could be a single integer or an array of section_ids</span>			</li>
+					<li>
+				<span class="var-type">results</span>
+				<span class="var-name">&$result_array</span><span class="var-description">: array     A assoc. array within &quot;content&quot; and  &quot;links&quot; as keys.</span>			</li>
+					<li>
+				<span class="var-type">not_found</span>
+				<span class="var-name">$not_found_msg</span><span class="var-description">: string    optional an message-string within on placeholder (%s) for the                                 requested section_id</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_external" id="register_external"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">register_external</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a198">198</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Website Baker ...</p>
+	<ul class="tags">
+				<li><span class="field">version:</span> 0.1.3</li>
+				<li><span class="field">since:</span> 0.1.3</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			register_external
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$files</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$files</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_modfiles" id="register_modfiles"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">register_modfiles</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a232">232</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Website Baker ...</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A HTML-String within the links to the modules-specific css/js files.</li>
+				<li><span class="field">version:</span> 0.1.3</li>
+				<li><span class="field">since:</span> 0.1.3</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			register_modfiles
+		</span>
+					(<span class="var-type">object A</span>&nbsp;<span class="var-name">&$db</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$page_id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">object A</span>
+				<span class="var-name">&$db</span><span class="var-description">: valid database-object instance - pass by reference!</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page_id</span><span class="var-description">: Any Page-Id.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_templatefiles" id="register_templatefiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">register_templatefiles</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a158">158</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">version:</span> 0.1.3</li>
+				<li><span class="field">since:</span> 0.1.3</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">example:</span> example not found</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			register_templatefiles
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">&$files</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$files</span><span class="var-description">: Assoc. array within the file-paths:</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregister_wb_values_to_js" id="register_wb_values_to_js"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">register_wb_values_to_js</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a388">388</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Website Baker ...</p>
+	<ul class="tags">
+				<li><span class="field">version:</span> 0.1.3</li>
+				<li><span class="field">since:</span> 0.1.3</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			register_wb_values_to_js
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: <p>Assoc. array within the (JS-)Name and                     the values inside a assoc. array with at least                     two keys: 'type' and 'value'.</p><p>Supported types are: 'string','str', 's'.                     As for future modifications there are also &quot;function&quot;, &quot;interger&quot;.                     Strings are escaped in quotes - all other values are leaved untouched.</p></span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodresolve_path" id="resolve_path"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">resolve_path</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a444">444</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Looks for an (local) file, and if exists returns the absolute url, 	otherwise the alternate one.</p>
+<p class="description"><p>Makes use of class-vars default_url and default_path.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Resulting url (absolute).</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			resolve_path
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$aPath</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$aAlternativePath</span> = <span class="var-default">&quot;&quot;</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$aPath</span><span class="var-description">: Any local path.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$aAlternativePath</span><span class="var-description">: Any other one.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodshow_menu2" id="show_menu2"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">show_menu2</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a314">314</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Website Baker ...</p>
+	<ul class="tags">
+				<li><span class="field">version:</span> 0.1.3</li>
+				<li><span class="field">link:</span> <a href="http://code.jellycan.com/files/show_menu2-README.txt">http://code.jellycan.com/files/show_menu2-README.txt</a></li>
+				<li><span class="field">since:</span> 0.1.3</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			show_menu2
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">&$options</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$options</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get_modules_files" id="__get_modules_files"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get_modules_files</span> (line <span class="line-number"><a href="../__filesource/fsource_WebsiteBaker - Modules__suiteswebsitebakersuite_websitebaker.php.html#a72">72</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__get_modules_files
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$aPath</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$aPath</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../WebsiteBaker - Modules/suite.html">suite</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../WebsiteBaker - Modules/suite.html#methodget_xhtml1_css_link">suite::get_xhtml1_css_link()</a></span><br>
+													<span class="method-name"><a href="../WebsiteBaker - Modules/suite.html#methodget_xhtml1_js_link">suite::get_xhtml1_js_link()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 31 Aug 2010 11:12:00 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
