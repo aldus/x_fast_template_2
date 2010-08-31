@@ -1,10 +1,16 @@
 <?php
 
 /**
- *	@version	0.4.0
- *	@date		2010-05-14
+ *	@version	0.5.0
+ *	@date		2010-08-29
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.0	2010-08-29	Introduce "suites" to keep the base-class small - and prevent to
+ *						pre-process unused methods or functions.
+ *						Some XHTML-Modifications (e.g. <![CDATA[ for Javascript).
+ *
+ *	0.4.1	2010-08-02	Minimal code-changes and optimations for WB.
  *
  *	0.4.0	2010-05-14	Add public method "resolve_path" and two new class-properties
  *						'default_path' and 'default_url'.
@@ -63,11 +69,11 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.3.2";
+$module_version       = "0.5.0";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
-$module_description   = "Implantation of drp-xFastTemplate2. <a href=\"../../modules/x_fast_template_2/doc/index.html\" targe=\"_blank\">Documentation</a>";
+$module_description   = "Implantation of drp-xFastTemplate2. <a href=\"../../modules/x_fast_template_2/doc/index.html\" target=\"_blank\">Documentation</a>";
 $module_guid		  = "7588B558-135A-4F6A-9263-9E3102D5EF61";
 
 ?>
