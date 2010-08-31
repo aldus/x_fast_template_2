@@ -6,6 +6,7 @@ Legend:
 
 Please keep in mind that this changelog may not be accurate.
 -----------------------------------
+!	2010-08-31	Add "code-suites" to reduce the code inside the index.php.
 !	2010-05-14	Add new public method "resolve_path" and two class-properties
 				'default_url' and 'default_path'.
 !	2010-05-13	First setup for github.
