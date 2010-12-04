@@ -1,10 +1,12 @@
 <?php
 
 /**
- *	@version	0.5.0
- *	@date		2010-08-29
+ *	@version	0.5.1
+ *	@date		2010-12-04
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.1	2010-12-04	Bugfix inside include.php method build_mysql_query - condition was an empty string.
  *
  *	0.5.0	2010-08-29	Introduce "suites" to keep the base-class small - and prevent to
  *						pre-process unused methods or functions.
@@ -69,7 +71,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.5.0";
+$module_version       = "0.5.1";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";

@@ -1409,7 +1409,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	public function build_mysql_query ($type, $table_name, &$table_values, $condition="") {
 		if (false === $this->__register_suite("mysql")) return NULL;
-		return $this->__suites['mysql']->build_mysql_query($type, $table_name, &$table_values, $condition="");
+		return $this->__suites['mysql']->build_mysql_query($type, $table_name, &$table_values, $condition);
 	}
 		 
 	/**
