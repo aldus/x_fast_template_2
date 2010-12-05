@@ -1,10 +1,12 @@
 <?php
 
 /**
- *	@version	0.5.1
- *	@date		2010-12-04
+ *	@version	0.5.2
+ *	@date		2010-12-05
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.2	2010-12-05	Bugfix inside include.php for missplaces pass-by-reference.
  *
  *	0.5.1	2010-12-04	Bugfix inside include.php method build_mysql_query - condition was an empty string.
  *
@@ -71,7 +73,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.5.1";
+$module_version       = "0.5.2";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
