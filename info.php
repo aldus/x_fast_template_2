@@ -1,10 +1,12 @@
 <?php
 
 /**
- *	@version	0.5.2
- *	@date		2010-12-05
+ *	@version	0.5.3
+ *	@date		2010-12-11
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.3	2010-12-11	Bugfix inside MySQL-Suite-Class for empty conditions within "build_query".
  *
  *	0.5.2	2010-12-05	Bugfix inside include.php for missplaces pass-by-reference.
  *

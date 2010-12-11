@@ -1,5 +1,17 @@
 <?php
 
+/**
+ *	MySQL suite for HTML_Template_xFastTemplate2.
+ *	Please keep in mind, that the @version belongs to this class!
+ *
+ *	@version	0.4.0
+ *	@date		2010-12-11
+ *	@author		Dietrich Roland Pehlke
+ *	@package	WebsiteBaker: modules - xFastTemplate2
+ *	@require	PHP >= 5.2.2
+ *	@licence	GPL
+ *
+ */
 
 class suite_mysql
 {
@@ -23,7 +35,7 @@ class suite_mysql
 			case 'update':
 				$q = "UPDATE `".$table_name."` set ";
 				foreach($table_values as $field => $value) $q .= "`".$field."`='".$value."',";
-				$q = substr($q, 0, -1)." WHERE ".$condition;
+				$q = substr($q, 0, -1).( ($condition != "") ? " WHERE ".$condition : "" );
 				
 				break;
 			
@@ -35,14 +47,14 @@ class suite_mysql
 				break;
 			
 			case 'delete':
-				$q  = "DELETE from `".$table_name."` WHERE ".$condition;
+				$q  = "DELETE from `".$table_name."`".( ($condition != "") ? " WHERE ".$condition : "" );
 				
 				break;
 			
 			case 'select':
 				$q  = "SELECT `";
 				$q .= implode("`,`", $table_values)."` ";
-				$q .= "FROM `".$table_name."` WHERE ".$condition;
+				$q .= "FROM `".$table_name."`".( ($condition != "") ? " WHERE ".$condition : "" );
 				
 				break;
 				
@@ -85,6 +97,46 @@ class suite_mysql
 		$result = $db->query( $query );
 		
 		if ($result->numRows() > 0) $this->get_all($result, $storage);
+	}
+	
+	/**
+	 *	Returns a linear array within the tablenames of the current database
+	 *
+	 *	@param	object	A MySQL-Database-Object-Instance. Pass by reference.
+	 *	@param	string	Optional string to 'strip' chars from the tablenames, e.g. the prefix.
+	 *	@return	array	An array within the tablenames of the current database.
+	 *
+	 */
+	public function list_tables(&$db, &$strip="" ) {
+		$result = $db->query("SHOW tables");
+		if (!$result) return array( $db->get_error() );
+		$ret_value = array();
+		while(false != ($data = $result->fetchRow())) {
+			$ret_value[] = $data[0];
+		}
+		if ($strip != "") {
+			foreach($ret_value as &$ref) $ref = str_replace($strip, "", $ref);
+		}
+		return $ret_value;
+	}
+	
+	/**
+	 *	Placed for all fields from a given table(-name) an assocc. array
+	 *	inside a given storrage-array.
+	 *
+	 *	@param	object	An MySQL-Instance(-object).
+	 *	@param	string	The tablename.
+	 *	@param	array	An array to store the results.
+	 *	@return	bool	True if success, otherwise false.
+	 *
+	 */
+	public function describe_table(&$db, $tablename, &$storrage) {
+		$result = $db->query("DESCRIBE `".$tablename."`");
+		if (!$result) return false;
+		while(false != ($data = $result->fetchRow( MYSQL_ASSOC ) ) ) {
+			$storrage[] = $data;
+		}
+		return true;
 	}
 }
 ?>

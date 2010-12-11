@@ -1429,6 +1429,22 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
+	 *	@suite MySQL
+	 */
+	public function list_tables( &$db, $strip="" ) {
+		if (false === $this->__register_suite("mysql")) return NULL;
+		return $this->__suites['mysql']->list_tables( $db, $strip );
+	}
+	
+	/**
+	 *	@suite MySQL
+	 */
+	public function describe_table( &$db, $tablename, &$storrage) {
+		if (false === $this->__register_suite("mysql")) return NULL;
+		return $this->__suites['mysql']->describe_table( $db,$tablename, $storrage );
+	}
+	
+	/**
 	 *	@suite	Javascript
 	 */
 	 public function clean_up_str (&$aStr) {
