@@ -1251,6 +1251,44 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
+	 *
+	 *	@param	string	Any filename to parse.
+	 *	@param	array	Array to store the results.
+	 *
+	 *	@return	nothing
+	 *
+	 */
+	public function parse_template_file( $aFilename, &$storage=array() ) {
+		if (!file_exists($this->pathAddition.$aFilename)) $this->_error(101, "[xft2] parse_template_string", $this->pathAddition.$aFilename);
+		
+		$source = file_get_contents( $this->pathAddition.$aFilename );
+		
+		$pattern_a = "/(<\!--)( [B|E]\s*.*)(-->)\s*?/i";
+		$pattern_b = "/(%s)((\s*.*?\n*)*)(%s)/i";
+		
+		$storage['main'] = $source;
+		
+		$match_a = array();
+		$r = preg_match_all( $pattern_a, $source, $match_a );
+		
+		for($i=0; $i<count($match_a[0]); $i++) {
+			$name = trim( str_replace("BEGIN", "", $match_a[2][$i] ) );
+		
+			$pat = sprintf(
+				$pattern_b,
+				$match_a[0][$i],	# n		{0,2,4,6,...}
+				$match_a[0][++$i]	# n++
+			);
+		
+			$match_b = array();
+			$r = preg_match( $pat, $source, $match_b);
+		
+			$storage[ $name ] = $match_b[2];
+			$storage[ 'main'] = str_replace( $match_b[0], "{{ ".$name." }}", $storage['main'] );
+	 	}
+	}
+	
+	/**
 	 *	@suite	HTML
 	 */
 	public function qf_xhtml1_hidden($aName ="", $aValue="") {

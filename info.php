@@ -1,10 +1,15 @@
 <?php
 
 /**
- *	@version	0.5.3
- *	@date		2010-12-11
+ *	@version	0.5.5
+ *	@date		2011-02-27
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.5	2011-02-27	Add new function "parse_template_file" to handle marked sections inside
+ *						a given template. E.g. <!-- BEGIN keyname:any --> <!-- END keyname:any -->
+ *
+ *	0.5.4	2011-01-01	Bugfix for wrong version-number inside info.php
  *
  *	0.5.3	2010-12-11	Bugfix inside MySQL-Suite-Class for empty conditions within "build_query".
  *
@@ -75,7 +80,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.5.2";
+$module_version       = "0.5.5";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
