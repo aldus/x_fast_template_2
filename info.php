@@ -1,10 +1,12 @@
 <?php
 
 /**
- *	@version	0.5.5
+ *	@version	0.5.6
  *	@date		2011-02-27
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.6	2011-11-14	LEPTON-CMS
  *
  *	0.5.5	2011-02-27	Add new function "parse_template_file" to handle marked sections inside
  *						a given template. E.g. <!-- BEGIN keyname:any --> <!-- END keyname:any -->
@@ -80,7 +82,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.5.5";
+$module_version       = "0.5.6";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
