@@ -135,32 +135,7 @@ if (!class_exists('HTML_Template_xFastTemplate2')) {
  *
  */
 
-/**
- *	Experimental addition to 0.2.4
- *
- *
- */
-class xft2_fms 
-{
-
-	var	$buffer=	array ();
-	
-	var $_metas=	array ();
-	
-	var $_css=		array ();
-	
-	var $_js=		array ();
-	
-	var $_modules=	array ();
-	
-
-	function add_page_modules_files (&$db, $page_id) {
-	
-	
-	}
-}
-
-class HTML_Template_xFastTemplate2 extends xft2_fms
+class HTML_Template_xFastTemplate2
 {
 
 	/**
