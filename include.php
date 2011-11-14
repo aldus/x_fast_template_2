@@ -1,7 +1,7 @@
 <?php
 
 /**
- *	Website Baker Project <http://www.websitebaker.org/>
+ *	Website Baker Project <http://www.lepton.org/>
  *	Copyright (C) 2004-2007, Ryan Djurovich
  *	
  *	Website Baker is free software; you can redistribute it and/or modify
@@ -70,9 +70,9 @@ class xft2_fms
  * @require		PHP 5.2.x
  *
  *
- *	0.7.1	2008-08-16	Additional changes for Websitebaker.
+ *	0.7.1	2008-08-16	Additional changes for lepton.
  *						Add new function "capture_echo" to get rid of bufferon-action-capture-bufferoff
- *						inside Websitebaker.
+ *						inside lepton.
  *	
  *	0.7.0	2008-05-12	Some additional public functions.
  *						Change code for PHP 5.2.x
@@ -265,7 +265,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	
 	/**
 	 *	Since 0.5.0 we are handling additional methods or functions
-	 *	inside suites, e.g. one suite for "WebsiteBaker", one for "html" or "javascript".
+	 *	inside suites, e.g. one suite for "lepton", one for "html" or "javascript".
 	 *	This allows us to parse only the source we're needed - instead of all.
 	 *
 	 */
@@ -275,9 +275,9 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		if (!array_key_exists($name, $this->__suites) ) {
 			switch($name) {
 				
-				case 'websitebaker':
-					require_once( dirname(__FILE__)."/suites/websitebaker/suite_websitebaker.php");
-					$this->__suites[$name] = new suite_websitebaker();
+				case 'lepton':
+					require_once( dirname(__FILE__)."/suites/lepton/suite_lepton.php");
+					$this->__suites[$name] = new suite_lepton();
 					$return_value = true;
 					break;
 					
@@ -1361,85 +1361,85 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function capture_echo ($aJobStr="") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->capture_echo($aJobStr);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->capture_echo($aJobStr);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function show_menu2 (&$options) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->show_menu2($options);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->show_menu2($options);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function register_wb_values_to_js (&$values) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_wb_values_to_js($values);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->register_wb_values_to_js($values);
 		
 	 }
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function register_modfiles (&$db, $page_id) {
 		
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_modfiles($db, $page_id);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->register_modfiles($db, $page_id);
 	 }
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function register_templatefiles (&$files) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_templatefiles($files);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->register_templatefiles($files);
 	}
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function register_external (&$files) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_external($files);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->register_external($files);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function get_modules (&$db, $page_id) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->get_modules ($db, $page_id);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->get_modules ($db, $page_id);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function get_section(&$db, $section_id, &$result_array, $not_found_msg = "<br />Section within id <b>%s</b> not found.") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->get_section($db, $section_id, $result_array, $not_found_msg);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->get_section($db, $section_id, $result_array, $not_found_msg);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function __get_modules_files ($aPath) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->__get_modules_files ($aPath);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->__get_modules_files ($aPath);
 	}
 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	lepton
 	 */
 	public function resolve_path ($aPath, $aAlternativePath="") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->resolve_path ($aPath, aAlternativePath);
+		if (false === $this->__register_suite("lepton")) return NULL;
+		return $this->__suites['lepton']->resolve_path ($aPath, aAlternativePath);
 	}
 
 	/**
