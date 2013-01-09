@@ -1,12 +1,24 @@
 <?php
 
+/**
+ *	class suite_websitebaker
+ *	WebsiteBaker specific methods for xFastTemplate2
+ *
+ *	@version	0.2.0
+ *	@date		2011-03-28
+ *	@author		Dietrich Roland Pehlke - Aldus
+ *	@package	WebsiteBaker: modules - xFastTemplate2
+ *
+ */
+
 require_once( dirname(__FILE__)."/../suite.php");
 
 class suite_websitebaker extends suite
 {
 	private $default_path = "";
 	private $default_url = "";
-	
+	private $guid = "853E1624-D872-418B-A09E-51D7C7EEC68E";
+
 	public function __construct() {
 		if (defined('WB_PATH')) $this->default_path = WB_PATH;
 		if (defined('WB_URL')) $this->default_url = WB_URL;
@@ -69,6 +81,11 @@ class suite_websitebaker extends suite
 		}
 	}
 	
+	/**
+	 *
+	 *
+	 *
+	 */
 	public function __get_modules_files ($aPath) {
 		$f = array (
 			'css' => array (
@@ -262,7 +279,7 @@ class suite_websitebaker extends suite
 		 */
 		$linked_modules = array();
 		
-		while ($modul = $result->fetchRow() ) {
+		while ($modul = $result->fetchRow( MYSQL_ASSOC ) ) {
 			
 			if (true === in_array($modul['module'], $linked_modules)) continue;
 			
@@ -291,7 +308,7 @@ class suite_websitebaker extends suite
 		}
 		
 		/**
-		 *	We're only define the constances if we've got at least one file founded!
+		 *	We're only define the constances if we've got at least one file found!
 		 */
 		if(!defined('MOD_FRONTEND_CSS_REGISTERED') && (true === $got_one['css']) ) define('MOD_FRONTEND_CSS_REGISTERED', true);
 		if(!defined('MOD_FRONTEND_JAVASCRIPT_REGISTERED') && (true === $got_one['js']) ) define('MOD_FRONTEND_JAVASCRIPT_REGISTERED', true);
@@ -398,9 +415,9 @@ class suite_websitebaker extends suite
 		
 		$vars = array_merge($vars, $values);
 		
-		$template_js = "<script type='text/javascript'>\n/* <![CDATA[ */\n\t// Coming from WB";
+		$template_js = "<script type='text/javascript'>\n/* <![CDATA[ */\n\t// Coming from xFastTemplate";
 		
-		foreach ($vars as $key=>$options) {
+		foreach ($vars as $key=>&$options) {
 			
 			switch (strtolower($options['type'])) {
 				
@@ -447,6 +464,16 @@ class suite_websitebaker extends suite
 			? $this->default_url.$aPath 
 			: $this->default_url.aAlternativePath
 			;
+	}
+	
+	/**
+	 *
+	 *	@param	string	The "called" method(-name)
+	 *	@param	array	Assoc. array within the arguments/params
+	 *
+	 */
+	public function __call($function_name, $args) {
+		return "Error: class-method '".$function_name."' is not found inside within args - ".implode(",", $args);
 	}
 }
 ?>

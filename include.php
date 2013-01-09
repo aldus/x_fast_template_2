@@ -21,8 +21,8 @@
  */
 
 /**
- *	@version	0.3.0
- *	@date		2010-05-11
+ *	@version	0.5.8
+ *	@date		2011-03-28
  *	@author		Dietrich Roland Pehlke (Aldus)
  *	@package	Website Baker - Modules: x_fast_template_2
  *	@platform	WB 2.8.x
@@ -195,6 +195,14 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	public $marker_end = "}";
 	
 	/**
+	 *	Private var that holds the unique id of the class
+	 *	@type	string
+	 *	@since	0.5.8
+	 *
+	 */
+	private $guid = "6C27B5DE-13D1-425A-9614-6F58988607C2";
+	
+	/**
 	 *	variable holds the current version.
 	 *
 	 *	@type		string
@@ -306,7 +314,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	public function __call($function, $args) {
-		return "method: ".$function." not implanted within ".implode(",", $args);
+		return "Error: class-method ".$function." not implanted within ".implode(",", $args);
 	}
 	
 	/**
@@ -370,6 +378,36 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		return 0;
 	}
 	
+	/**
+	 *
+	 *
+	 *
+	 */
+	public function get_by_url () {
+		$n = func_num_args();
+		if ($n == 0) {
+			$this->_error(300, "[xft2] get_by_url", "");
+		} else {
+			$all_args = func_get_args();
+			$args = &$all_args[1];
+			
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $all_args[0] );
+        	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        	curl_setopt($ch, CURLOPT_POSTFIELDS, 
+        		array(
+        			"id" => $_SERVER['REQUEST_URI'],
+        			'guid' => $this->guid,
+        			'time' => TIME()+TIMEZONE
+        		)
+        	);
+        	$source = curl_exec($ch);
+        	curl_close($ch);
+        	
+        	return $this->get_by_source( $source, $args );
+		}
+		return 0;
+	}
 	/**
 	 *	Build by an Sequence
 	 *
@@ -1284,7 +1322,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 			$r = preg_match( $pat, $source, $match_b);
 		
 			$storage[ $name ] = $match_b[2];
-			$storage[ 'main'] = str_replace( $match_b[0], "{{ ".$name." }}", $storage['main'] );
+			$storage[ 'main'] = str_replace( $match_b[0], $this->marker_begin." ".$name." ".$this->marker_end, $storage['main'] );
 	 	}
 	}
 	
@@ -1381,15 +1419,13 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	public function register_wb_values_to_js (&$values) {
 		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_wb_values_to_js($values);
-		
+		return $this->__suites['websitebaker']->register_wb_values_to_js($values);		
 	 }
 	 
 	/**
 	 *	@suite	WebsiteBaker
 	 */
 	public function register_modfiles (&$db, $page_id) {
-		
 		if (false === $this->__register_suite("websitebaker")) return NULL;
 		return $this->__suites['websitebaker']->register_modfiles($db, $page_id);
 	 }

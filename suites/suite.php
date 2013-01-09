@@ -1,8 +1,20 @@
 <?php
 
+/**
+ *	class suite
+ *	Clas for specific methods for xFastTemplate2
+ *
+ *	@version	0.2.0
+ *	@date		2011-03-28
+ *	@author		Dietrich Roland Pehlke - Aldus
+ *	
+ */
 
 class suite
 {
+
+	private $guid = "2CFB7FF7-74E7-4E1C-8E92-8B9621E1EB7F";
+
 	public function get_xhtml1_js_link ($aFileName="") {
 		if ($aFileName == "") {
 			return "";

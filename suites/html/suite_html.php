@@ -1,8 +1,19 @@
 <?php
 
+/**
+ *	class suite_html
+ *	(x)HTML specific methods for xFastTemplate2
+ *
+ *	@version	0.2.0
+ *	@date		2011-03-28
+ *	@author		Dietrich Roland Pehlke - Aldus
+ *	
+ */
 
 class suite_html
 {
+
+	private $guid = "D8E3CED0-8F26-4874-BC32-C531E15C7FB0";
 
 	/**
 	 *

@@ -16,6 +16,8 @@
 class suite_mysql
 {
 
+	private $guid = "8D085680-1ED3-4206-9D3A-147B6D4E0DC9";
+	
 	/**
 	 *
 	 *	@since	0.3.0
@@ -55,6 +57,59 @@ class suite_mysql
 				$q  = "SELECT `";
 				$q .= implode("`,`", $table_values)."` ";
 				$q .= "FROM `".$table_name."`".( ($condition != "") ? " WHERE ".$condition : "" );
+				
+				break;
+			
+			/**
+			 *	Alter a table
+			 *
+			 *	On this one, we're using the $table_values in a differ way than normal:
+			 *	The array has to be formed as
+			 * 
+			 *	'fieldname' => array(
+			 *		'operation'	=> add | delete | set	!required
+			 *		'type'		=> field type e.g. VARCHAR(255)	!required
+			 *		'charset'	=> optional charset
+			 *		'collate'	=> optional collate
+			 *		'params'	=> optional any additional params like "not NULL"
+			 *	);
+			 *
+			 *	e.g.:
+			 *
+			 *	$upgrade_fields = array(
+			 *		'plan'	=> array(
+			 *			'operation'	=> "add",
+			 *			'type'		=> "varchar(255)",
+			 *			'charset'	=> "utf8",
+			 *			'collate'	=> "utf8_general_ci",
+			 *			'params'	=> "not NULL default ''"
+			 *		),
+			 *		'sort'	=> array(
+			 *			'operation' => "add",
+			 *			'type'		=> "varchar(255)",
+			 *			'charset'	=> "utf8",
+			 *			'collate'	=> "utf8_general_ci",
+			 *			'params'	=> "not NULL default ''"
+			 *		)
+			 *	);
+			 *
+			 */
+			case 'alter':
+				$q = "ALTER TABLE `".$table_name."`";
+				
+				foreach($table_values as $name => &$options) {
+				
+					if ( (!isset($options['operation']) ) || (!isset($options['type']) ) ) continue;
+					
+					$q .= " ".strtoupper($options['operation'])." `".$name."` ".$options['type'];
+					
+					if( isset($options['charset'])) $q .= " CHARACTER SET ".$options['charset'];
+					if( isset($options['collate'])) $q .= " COLLATE ".$options['collate'];
+					if( isset($options['params'])) $q .= " ".$options['params'];
+					
+					$q .= ",";
+				}
+				$q = substr($q, 0, -1);
 				
 				break;
 				

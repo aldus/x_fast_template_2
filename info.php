@@ -1,10 +1,22 @@
 <?php
 
 /**
- *	@version	0.5.5
- *	@date		2011-02-27
+ *	@version	0.5.8
+ *	@date		2011-03-28
  *	@author		Dietrich Roland Pehlke
  *	@package	Websitebaker - Modules: xFastTemplate2
+ *
+ *	0.5.8	2011-03-28	Remove the documentation-files from the project and update the link to the
+ *						documentation-files on websitebakers.org. This "outsource" makes it less
+ *						problematic for the user to get an actual version of the documentation.
+ *						Add link to the example-template to the $module-description.
+ *						Bugfix inside the class method "parse_template_file".
+ *						Minor cosmetic code-changes and removing typos.
+ *						Add new method "get_by_url" - similar to "get_by_source".
+ *
+ *	0.5.7	2011-03-17	Remove the php4 file from the project.
+ *						Add "alter" to "build_mysql_query" (suite: mySQL).
+ *						Add guid (private) to the suite-classes.
  *
  *	0.5.5	2011-02-27	Add new function "parse_template_file" to handle marked sections inside
  *						a given template. E.g. <!-- BEGIN keyname:any --> <!-- END keyname:any -->
@@ -80,11 +92,11 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.5.5";
+$module_version       = "0.5.8";
 $module_platform      = "2.8";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
-$module_description   = "Implantation of drp-xFastTemplate2. <a href=\"../../modules/x_fast_template_2/doc/index.html\" target=\"_blank\">Documentation</a>";
+$module_description   = "Implantation of drp-xFastTemplate2. see <a href=\"http://websitebakers.org/_documentation/x_fastTemplate/index.html\" target=\"_blank\">documentation on Websitebakers.org</a>. An example-template can be download <a target='blank' href='http://websitebakers.org/_documentation/x_fastTemplate/aldus_simple.zip'> here </a>.";
 $module_guid		  = "7588B558-135A-4F6A-9263-9E3102D5EF61";
 
 ?>
