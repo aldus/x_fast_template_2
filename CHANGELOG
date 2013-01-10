@@ -2,6 +2,8 @@
  *
  *	Changelog for xFastTemplate2
  *
+ *	0.6.1				Minor codechanges and bugfixes.
+ *
  *
  *	0.6.0	2013-01-10	Moved changeloc from the info.php to the CHANGELOG file.
  *						Remove the WebsiteBaker suite and add a Lepton-CMS suite to the project.

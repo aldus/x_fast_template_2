@@ -1,30 +1,10 @@
 <?php
 
 /**
- *	Website Baker Project <http://www.websitebaker.org/>
- *	Copyright (C) 2004-2007, Ryan Djurovich
- *	
- *	Website Baker is free software; you can redistribute it and/or modify
- *	it under the terms of the GNU General Public License as published by
- *	the Free Software Foundation; either version 2 of the License, or
- *	(at your option) any later version.
- *	
- *	Website Baker is distributed in the hope that it will be useful,
- *	but WITHOUT ANY WARRANTY; without even the implied warranty of
- *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *	GNU General Public License for more details.
- *	
- *	You should have received a copy of the GNU General Public License
- *	along with Website Baker; if not, write to the Free Software
- *	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- */
-
-/**
  *	@version	0.6.0
  *	@date		2013-01-10
  *	@author		Dietrich Roland Pehlke (Aldus)
- *	@package	Website Baker - Modules: x_fast_template_2
+ *	@package	Lepton-CMS - Modules: x_fast_template_2
  *	@platform	Lepton-CMS 1.1.4
  *	@require	PHP 5.x
  *
@@ -112,7 +92,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 *	@version	0.1.2
 	 *
 	 */
-	public $versionStr = "0.6.0 @RC2 PHP 5.2.x - WB2.8.2[ 2010-08-31 ] | Lepton-CMS 1.1.4";
+	public $versionStr = "0.6.1 @RC2 PHP 5.2.x - WB2.8.2[ 2010-08-31 ] | Lepton-CMS 1.1.4";
 	
 	/**
 	 *	Public array hold the error-messages
@@ -175,9 +155,20 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
+	 *	PathAddition was'nt very intuitive - so we add a more "explaining" function here.
+	 *
+	 */
+	public function set_template_folder($aPath="") {
+		$this->pathAddition = $aPath;
+	}
+	
+	/**
 	 *	Since 0.5.0 we are handling additional methods or functions
-	 *	inside suites, e.g. one suite for "WebsiteBaker", one for "html" or "javascript".
+	 *	inside suites, e.g. one suite for "Lepton-CMS", one for "html" or "javascript".
 	 *	This allows us to parse only the source we're needed - instead of all.
+	 *
+	 *	@param	string	A name of the requested suite.
+	 *	@return	bool	True if success, false if faild (e.g. requested suite unknown).
 	 *
 	 */
 	private function __register_suite($aSuiteName="") {
@@ -216,6 +207,10 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		return $return_value;
 	}
 	
+	/**
+	 *	Called when a unknown/undefined method is requested.
+	 *
+	 */
 	public function __call($function, $args) {
 		return "Error: class-method ".$function." not implanted within ".implode(",", $args);
 	}
@@ -240,7 +235,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 			if (!file_exists($this->pathAddition.$all_args[0]))
 				$this->_error(101, "[xft2] get_by_template", $this->pathAddition.$all_args[0]);
 			
-			$templateStr = implode("", file($this->pathAddition.$all_args[0]));
+			$templateStr = file_get_contents($this->pathAddition.$all_args[0]);
 			
 			$Pattern = Array();
 			$Replace = Array();
@@ -615,7 +610,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 			if (!file_exists($this->pathAddition.$all_args[0])) {
 				$this->_error(401, "[xft2] direct", $all_args[0]);
 			} else {
-				return implode("", FILE ($this->pathAddition.$all_args[0]));
+				return file_get_contents($this->pathAddition.$all_args[0]);
 			}
 		}
 		return 0;
@@ -683,7 +678,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 			
 			if (!file_exists($this->pathAddition.$all_args[0])) die("Datei: ".$this->pathAddition.$all_args[0]." nicht vorhanden oder Pfad fehlerhaft. [public function->getKeywords]");
 			
-			$templateStr = implode("", file($this->pathAddition.$all_args[0]));
+			$templateStr = file_get_contents($this->pathAddition.$all_args[0]);
 			$matches = Array();
 			preg_match_all("{\{.*}", $templateStr, $matches, PREG_PATTERN_ORDER);
 			
@@ -784,10 +779,12 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	/**
 	 *	Looking up for css-classes
 	 *
+	 *	@param	string	A (HTML) source string. Pass by reference.
+	 *	@return	array	Result-array with the matches.
 	 *	@since 0.4.1
 	 *
 	 */
-	public function findClasses ($aHTML_Source) {
+	public function findClasses (&$aHTML_Source) {
 		
 		$matches = Array();
 		preg_match_all("[class=[\"|\']([\n,\t,0-9,a-z,A-Z, _-]{0,})[\"|\']]", $aHTML_Source, $matches, PREG_PATTERN_ORDER);
@@ -796,10 +793,11 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	
 	/**
 	 *	Looking up for css-ids
-	 *
+	 *	@param	string	A (HTML) source string. Pass by reference.
+	 *	@return	array	Result-array with the matches.
 	 *	@since 0.5.0
 	 */
-	public function findIds ($aHTML_Source) {
+	public function findIds (&$aHTML_Source) {
 		
 		$matches = Array();
 		preg_match_all("[id=[\"|\']([\n,\t,0-9,a-z,A-Z, _-]{0,})[\"|\']]", $aHTML_Source, $matches, PREG_PATTERN_ORDER);
@@ -1378,7 +1376,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	public function resolve_path ($aPath, $aAlternativePath="") {
 		if (false === $this->__register_suite("lepton-cms")) return NULL;
-		return $this->__suites['lepton-cms']->resolve_path ($aPath, aAlternativePath);
+		return $this->__suites['lepton-cms']->resolve_path ($aPath, $aAlternativePath);
 	}
 
 	/**
@@ -1418,7 +1416,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	public function describe_table( &$db, $tablename, &$storrage) {
 		if (false === $this->__register_suite("mysql")) return NULL;
-		return $this->__suites['mysql']->describe_table( $db,$tablename, $storrage );
+		return $this->__suites['mysql']->describe_table( $db, $tablename, $storrage );
 	}
 	
 	/**
