@@ -7,7 +7,7 @@
  *	@version	0.4.0
  *	@date		2010-12-11
  *	@author		Dietrich Roland Pehlke
- *	@package	WebsiteBaker: modules - xFastTemplate2
+ *	@package	Lepton-CMS: modules - xFastTemplate2
  *	@require	PHP >= 5.2.2
  *	@licence	GPL
  *

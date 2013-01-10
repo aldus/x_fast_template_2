@@ -1,19 +1,19 @@
 <?php
 
 /**
- *	class suite_websitebaker
+ *	class suite_lepton-cms
  *	WebsiteBaker specific methods for xFastTemplate2
  *
  *	@version	0.2.0
  *	@date		2011-03-28
  *	@author		Dietrich Roland Pehlke - Aldus
- *	@package	WebsiteBaker: modules - xFastTemplate2
+ *	@package	Lepton-CMS: modules - xFastTemplate2
  *
  */
 
 require_once( dirname(__FILE__)."/../suite.php");
 
-class suite_websitebaker extends suite
+class suite_lepton-cms extends suite
 {
 	private $default_path = "";
 	private $default_url = "";
@@ -25,10 +25,10 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	@suite		WebsiteBaker
+	 *	@suite		Lepton-CMS
 	 *
 	 *	@since		0.2.0
-	 *	@platform	WB 2.8.0
+	 *	@platform	Lepton 1.1.4
 	 *
 	 *	@param	db			object	Any database-connector instance.
 	 *	@param	section_id	mixed	could be a single integer or an array of section_ids
@@ -82,7 +82,7 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *
+	 *	@suite	Lepton-CMS
 	 *
 	 *
 	 */
@@ -119,13 +119,12 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	@suite		WebsiteBaker
+	 *	@suite		Lepton-CMS
 	 *
 	 *	Looking for the modules witch are involved for the current page_content.
 	 *
 	 *	@version	0.1.5
 	 *	@since		0.1.5
-	 *	@package	Website Baker - Modules
 	 *	
 	 *	@param	object	A valid databaseinstance - pass by reference!
 	 *	@param	integer	Any page_id.
@@ -150,11 +149,11 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	@suite		WebsiteBaker
+	 *	@suite		Lepton-CMS
 	 *
 	 *	@version 	0.1.3
 	 *	@since		0.1.3
-	 *	@package	Website Baker - Modules
+	 *	@package	Lepton-CMS - Modules
 	 *
 	 *	Looks for the template-specific css/js files inside the Template-Directory
 	 *
@@ -203,11 +202,11 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	Website Baker ...
+	 *	@suite	Lepton-CMS
 	 *
 	 *	@version	0.1.3
 	 *	@since		0.1.3
-	 *	@package	Website Baker - Modules
+	 *	@package	Lepton-CMS - Modules
 	 *
 	 *	All other "external" files to link ... note: there is no test for existing ones here!
 	 *
@@ -230,11 +229,11 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	Website Baker ...
+	 *	@suite	Lepton-CMS
 	 *	
 	 *	@version 	0.1.3
 	 *	@since		0.1.3
-	 *	@package	Website Baker - Modules
+	 *	@package	Lepton-CMS - Modules
 	 *
 	 *	The other version of "register_modfiles" ... but this one
 	 *	is only stepping one time thrue the sections.
@@ -317,11 +316,11 @@ class suite_websitebaker extends suite
 	}
 	 
 	/**
-	 *	Website Baker ...
+	 *	@suite	Lepton-CMS
 	 *
 	 *	@version	0.1.3
 	 *	@since		0.1.3
-	 *	@package	Website Baker - Modules
+	 *	@package	Lepton-CMS - Modules
 	 *	@link		http://code.jellycan.com/files/show_menu2-README.txt
 	 *
 	 *	@notice		For more informations about show_menu2 please visit
@@ -383,13 +382,13 @@ class suite_websitebaker extends suite
 	}
 	
 	/**
-	 *	Website Baker ...
+	 *	@suite	Lepton-CMS
 	 *	
 	 *	@version 	0.1.3
 	 *	@since		0.1.3
-	 *	@package	Website Baker - Modules
+	 *	@package	Lepton-CMS - Modules
 	 *
-	 *	Sometimes it's a good idea to transform WB values/constants
+	 *	Sometimes it's a good idea to transform Lepton-CMS values/constants
 	 *	into javascript.
 	 *
 	 *	@param	array	Assoc. array within the (JS-)Name and 
@@ -402,7 +401,7 @@ class suite_websitebaker extends suite
 	 *
 	 *
 	 */
-	public function register_wb_values_to_js (&$values) {
+	public function register_lepton_values_to_js (&$values) {
 		
 		/**
 		 *	Basic WB Constants that should reg. ever.
@@ -446,7 +445,14 @@ class suite_websitebaker extends suite
 		
 		return $template_js;
 	 }
-	
+	 
+	/**
+	 *	To keep the method backward compatible.
+	 */
+	public function register_wb_values_to_js( &$values) {
+		return $this->register_lepton_values_to_js( $values );
+	}
+
 	/**
 	 *	Looks for an (local) file, and if exists returns the absolute url,
 	 *	otherwise the alternate one.

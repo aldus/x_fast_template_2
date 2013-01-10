@@ -21,14 +21,12 @@
  */
 
 /**
- *	@version	0.5.8
- *	@date		2011-03-28
+ *	@version	0.6.0
+ *	@date		2013-01-10
  *	@author		Dietrich Roland Pehlke (Aldus)
  *	@package	Website Baker - Modules: x_fast_template_2
- *	@platform	WB 2.8.x
+ *	@platform	Lepton-CMS 1.1.4
  *	@require	PHP 5.x
- *	
- *	0.1.1	2008-08-26	First beta run
  *
  */
 
@@ -60,103 +58,8 @@ class xft2_fms
 }
 
 /**
+ *	Class
  *
- * @version		0.7.1 rc1
- * @build		40
- * @date		2010-05-11
- * @author		Dietrich Roland Pehlke
- * @license		free - without any warrenties as it is
- * @state		@RC1
- * @require		PHP 5.2.x
- *
- *
- *	0.7.1	2008-08-16	Additional changes for Websitebaker.
- *						Add new function "capture_echo" to get rid of bufferon-action-capture-bufferoff
- *						inside Websitebaker.
- *	
- *	0.7.0	2008-05-12	Some additional public functions.
- *						Change code for PHP 5.2.x
- *	
- *	0.6.6	2008-04-08	Bugix for PHP 4.x
- *	
- *	0.6.5	2008-03-26	Renamed "stripComments" into "removeComments".
- *						Minor changes inside the regExpr.
- *	
- *	0.6.4	2008-03-22	Add new public public function "remove_unusedMarkers" for removing unused markers.
- *	
- *	0.6.3	2008-03-12	Minor typos in public function-description eleminated ( ->direct ).
- *			2008-03-18	Add description(-s) to ->getBlocks
- *			
- *	0.6.2	2007-09-01	Add new public function "setMarker" for easier define the begin and end-marker.
- *	
- *						Modifications at the preg-patterns to handle double-markers in the form:
- *							{aMarker}, {{aMarker}}, or f.ex. <<<< A MARKER >>>>
- *	
- *						New public function "__buildPattern" for "central"-building the preg-replace pattern
- *						at one place instead of 20 places.
- *						
- *						Minor changes for: the classname and the filename: PEAR-Compatible.
- *						Class:	HTML_Template_xFastTemplate2
- *						File:	xFastTemplate2.php
- *	
- *	0.6.1	2007-08-30	Add " " and TAB into the preg-replace patterns to alowed spaces and tabs
- *						in the marker, f.ex. "{  A-Marker  }" instead of strict "{A-Marker}".
- *	
- *	0.6.0	2007-08-28	"preg_replace" instead of "ereg_replace"|"str_replace" in public functions:
- *						- get_by_template
- *						- get_by_source
- *						- get_masterTable2
- *						- get_sequence
- *						- __parseStr
- *						- stripComments
- *						
- *						Some additions and minor changes in ”stripComments" in the pattern.
- *						Add optional arg for lineFeed removemend.
- *						
- *						Also: public function get_masterTable is marked for obsolete!
- *	
- *						Also: Testpublic function (Alpha!): renderTemplate, renderSequence for tests
- *						
- *			2007-08-29	Minor fixes and changes in "getSequence"; include now foreach instead "for".
- *	
- *	
- *	0.5.0	2007-08-09	Bugfix in public function "findClasses".
- *						Add new public function "findIDs".
- *	
- *	0.4.3	2007-07-18	Added $this->pathAddition into public function "direct"
- *
- *	0.4.2	2007-06-27	Pathaddition-Bugfix in _error for the correct path
- *						to the error-template. Minor text-changes in the error-messages.
- *						Bugfix in direct(). 
- *	
- *	0.4.1	2007-06-26	HTML-Entities: & and " masked in the public function "__parseStr"
- *						added to avoid future problems with embedded entities.
- *
- *	0.4.0	2007-04-08	Minor typos and additions in the documentation and DocBlocks
- *					
- *	0.4.0	2007-04-08	New public function: get_masterTable2
- *						Additional public function for another way to handle masterTable.
- *
- *	0.3.0				New public function: get_masterTable
- *
- *	0.3.0	2007-04-04	New public function: direct 
- *
- *	0.3.0	2007-04-04	New public function: get_by_souce
- *
- *	0.2.1	2007-04-04	Minor BugChanges in the ereg_replace Filters inside "stripComments()"
- *
- *	0.2.0	2007-04-04	Adding lang(-uage) and xft2_error_msg for languages
- *						At this time only: 'german' and 'english'					
- *	0.2.0	2007-04-04	Adding "DocBlocks" for PhpDocumentator.
- *
- *	0.2.0	2007-04-04	Renaming the class into "drp_xFastTemplate2"
- *
- *	0.2.0 	2007-04-04	Included the "xft2_basic.css" into the "xft2_error.tmpl"-file
- *						to get rid of the multible file-handling and confusion ...
- *	
- *	0.1.2	2007-04-02	File "xft2_basic.css" for the styles for the Error-Msg
- *
- *	0.1.2	2007-04-02	Folder "templates" with "xft2_error.tmpl" in it
  *
  */
 class HTML_Template_xFastTemplate2 extends xft2_fms
@@ -209,7 +112,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 *	@version	0.1.2
 	 *
 	 */
-	public $versionStr = "0.5.0 @RC2 PHP 5.3.x - WB2.8.2[2010-08-31]";
+	public $versionStr = "0.6.0 @RC2 PHP 5.2.x - WB2.8.2[ 2010-08-31 ] | Lepton-CMS 1.1.4";
 	
 	/**
 	 *	Public array hold the error-messages
@@ -283,9 +186,9 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		if (!array_key_exists($name, $this->__suites) ) {
 			switch($name) {
 				
-				case 'websitebaker':
-					require_once( dirname(__FILE__)."/suites/websitebaker/suite_websitebaker.php");
-					$this->__suites[$name] = new suite_websitebaker();
+				case 'lepton-cms':
+					require_once( dirname(__FILE__)."/suites/lepton-cms/suite_lepton-cms.php");
+					$this->__suites[$name] = new suite_lepton-cms();
 					$return_value = true;
 					break;
 					
@@ -1399,83 +1302,83 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function capture_echo ($aJobStr="") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->capture_echo($aJobStr);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->capture_echo($aJobStr);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function show_menu2 (&$options) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->show_menu2($options);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->show_menu2($options);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function register_wb_values_to_js (&$values) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_wb_values_to_js($values);		
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->register_wb_values_to_js($values);		
 	 }
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function register_modfiles (&$db, $page_id) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_modfiles($db, $page_id);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->register_modfiles($db, $page_id);
 	 }
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function register_templatefiles (&$files) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_templatefiles($files);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->register_templatefiles($files);
 	}
 	 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function register_external (&$files) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->register_external($files);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->register_external($files);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function get_modules (&$db, $page_id) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->get_modules ($db, $page_id);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->get_modules ($db, $page_id);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function get_section(&$db, $section_id, &$result_array, $not_found_msg = "<br />Section within id <b>%s</b> not found.") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->get_section($db, $section_id, $result_array, $not_found_msg);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->get_section($db, $section_id, $result_array, $not_found_msg);
 	}
 	
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function __get_modules_files ($aPath) {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->__get_modules_files ($aPath);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->__get_modules_files ($aPath);
 	}
 
 	/**
-	 *	@suite	WebsiteBaker
+	 *	@suite	Lepton-CMS
 	 */
 	public function resolve_path ($aPath, $aAlternativePath="") {
-		if (false === $this->__register_suite("websitebaker")) return NULL;
-		return $this->__suites['websitebaker']->resolve_path ($aPath, aAlternativePath);
+		if (false === $this->__register_suite("lepton-cms")) return NULL;
+		return $this->__suites['lepton-cms']->resolve_path ($aPath, aAlternativePath);
 	}
 
 	/**

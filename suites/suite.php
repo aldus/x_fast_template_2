@@ -2,7 +2,7 @@
 
 /**
  *	class suite
- *	Clas for specific methods for xFastTemplate2
+ *	Class for specific methods for xFastTemplate2
  *
  *	@version	0.2.0
  *	@date		2011-03-28
