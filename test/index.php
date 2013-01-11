@@ -34,7 +34,7 @@ $test_content .= $xft2->get_by_template(
 		'message' => "1. Hello world!"
 	)
 );
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 /**
  *	2
  */
@@ -46,7 +46,7 @@ $test_content .= $xft2->get_by_source(
 		"message" => "2. build by source"
 	)
 );
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 
 /**
  *	3
@@ -68,7 +68,7 @@ foreach($results as $ref=>$source) {
 		)
 	);
 }
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 
 /**
  *	4
@@ -78,9 +78,9 @@ global $database;
 
 $test_content .= "<b>All modules on page x.</b>";
 $all_modules = $xft2->get_modules( $database, 5 );
-foreach($all_modules as &$name) $test_content .= "<p>Module(-s) on page 5: ".$name."<p>";
+foreach($all_modules as &$name) $test_content .= "<p>Module(-s) on page 5: ".$name."</p>";
 
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 
 /**	
  *	5
@@ -90,7 +90,7 @@ $test_content .= "<b>Getting installed table-names via list_tables.</b>";
 $fields = $xft2->list_tables( $database, TABLE_PREFIX );
 foreach($fields as $temp_name) $test_content .= "<p>".$temp_name."</p>";
 
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 
 /**
  *	6
@@ -110,7 +110,7 @@ foreach($storrage as $key => $value) {
 	$test_content .= "</div>";
 }
 
-$test_content .= "<hr size='1' />";
+$test_content .= "<hr class='delimiter' />";
 
 $test_content .= "<p>end</p>";
 
