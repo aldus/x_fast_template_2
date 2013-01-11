@@ -1,0 +1,15 @@
+<!-- BEGIN block_one -->
+<p>{{ message }}</p>
+<!-- End block_one -->
+
+<!-- BEGIN block_two -->
+<h3>{{ message }}</h3>
+<!-- End block_two -->
+
+<!-- BEGIN another_block -->
+<p><em>{{ message }}</em></p>
+<!-- END another_block -->
+
+<!-- BEGIN footer -->
+<b>{{{{ message }}}}</b>
+<!-- END footer -->

@@ -723,8 +723,15 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 */
 	private function _error ($aNumber, $aJob, $aFilename) {
 		$aMsg = str_replace('{file}', $aFilename, $this->xft2_error_msg[$this->lang][(string)$aNumber]);
-		if (file_exists($this->pathAddition."xft2_error.tmpl") ) { 
-			$msg = $this->get_by_template("xft2_error.tmpl", 
+		
+		$template_file_found = (file_exists($this->pathAddition."xft2_error.tmpl") );
+		if (false === $template_file_found) { 
+			$this->pathAddition = dirname(__FILE__)."/templates/";
+			$template_file_found = (file_exists($this->pathAddition."xft2_error.tmpl") );
+		}		
+		if (true === $template_file_found) { 
+			$msg = $this->get_by_template(
+				"xft2_error.tmpl", 
 				Array(	'error_num' => $aNumber, 
 						'error_msg' => $aMsg, 
 						'error_job' => $aJob, 

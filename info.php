@@ -1,8 +1,8 @@
 <?php
 
 /**
- *	@version	0.6.1
- *	@date		2013-01-10
+ *	@version	0.6.2
+ *	@date		2013-01-11
  *	@author		Dietrich Roland Pehlke
  *	@package	Lepton-CMS - Modules: xFastTemplate2
  *
@@ -11,7 +11,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.6.1";
+$module_version       = "0.6.2";
 $module_platform      = (!defined('LEPTON_GUID')) ? "2.8" : "1.1.0";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
