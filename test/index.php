@@ -112,6 +112,53 @@ foreach($storrage as $key => $value) {
 
 $test_content .= "<hr class='delimiter' />";
 
+/**
+ *	7
+ */
+$test_content .= "<b>Building queries.</b>";
+$fields = array(
+	'id'	=> rand(2,34),
+	'page_id' => rand(2,55),
+	'section_name' => 'unknown',
+	'module_name'	=> 'test',
+	'date'	=> TIME()
+);
+$q = $xft2->build_mysql_query(
+	'insert',
+	TABLE_PREFIX."mod_test",
+	$fields,
+	''
+);
+$test_content .= "<p class='query'>".$q."</p>";
+
+$q = $xft2->build_mysql_query(
+	'update',
+	TABLE_PREFIX."mod_test",
+	$fields,
+	'`page_id`=12'
+);
+$test_content .= "<p class='query'>".$q."</p>";
+
+$fields = array(
+	'plan'	=> array(
+		'operation'	=> "add",
+		'type'		=> "varchar(255)",
+		'charset'	=> "utf8",
+		'collate'	=> "utf8_general_ci",
+		'params'	=> "not NULL default ''"
+	)
+);
+
+$q = $xft2->build_mysql_query(
+	'alter',
+	TABLE_PREFIX."mod_test",
+	$fields,
+	''
+);
+$test_content .= "<p class='query'>".$q."</p>";
+
+$test_content .= "<hr class='delimiter' />";
+
 $test_content .= "<p>end</p>";
 
 $page_content = array(

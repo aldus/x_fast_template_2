@@ -25,6 +25,15 @@ p, b {
 	margin: 0px;
 }
 
+p.query {
+	margin-bottom: 10px;
+	color: #666666;
+}
+
+p.query:first-letter {
+	font-weight: bold;
+}
+
 em {
 	font-family: Verdana, Arial, sans-serif;
 	font-style: italic;
