@@ -92,7 +92,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 *	@version	0.1.2
 	 *
 	 */
-	public $versionStr = "0.6.1 @RC2 PHP 5.2.x - WB2.8.2[ 2010-08-31 ] | Lepton-CMS 1.1.4";
+	public $versionStr = "0.6.2 @RC2 PHP 5.2.x - Lepton-CMS 1.2.1";
 	
 	/**
 	 *	Public array hold the error-messages

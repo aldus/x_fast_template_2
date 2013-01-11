@@ -25,6 +25,15 @@ p, b {
 	margin: 0px;
 }
 
+p.version {
+	font-size: 14px;
+	text-align: left;
+	padding-left: 100px;
+	font-weight: bold;
+	color: #800000;
+	margin-bottom: 28px;
+}
+
 p.query {
 	margin-bottom: 10px;
 	color: #666666;

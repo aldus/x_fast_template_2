@@ -10,9 +10,12 @@
 	</head>
 	<body>
 <div class="outer_box">
+<p class="version">Testpage for: <br />{{ version }}<br />{{ date }}</p>
+
 {{
 	content
 }}
+
 </div>
 </body>
 </html>

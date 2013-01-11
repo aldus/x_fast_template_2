@@ -162,6 +162,8 @@ $test_content .= "<hr class='delimiter' />";
 $test_content .= "<p>end</p>";
 
 $page_content = array(
+	'version'	=> $xft2->versionStr,
+	'date'		=> date("Y-m-d H:i:s", time() ),
 	'content' => $test_content,
 	'module_url' => WB_URL."/modules/x_fast_template_2/test"
 );
