@@ -13,7 +13,7 @@
 
 require_once( dirname(__FILE__)."/../suite.php");
 
-class suite_lepton-cms extends suite
+class suite_lepton_cms extends suite
 {
 	private $default_path = "";
 	private $default_url = "";

@@ -179,7 +179,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 				
 				case 'lepton-cms':
 					require_once( dirname(__FILE__)."/suites/lepton-cms/suite_lepton-cms.php");
-					$this->__suites[$name] = new suite_lepton-cms();
+					$this->__suites[$name] = new suite_lepton_cms();
 					$return_value = true;
 					break;
 					
