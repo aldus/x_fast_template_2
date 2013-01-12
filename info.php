@@ -2,7 +2,7 @@
 
 /**
  *	@version	0.6.2
- *	@date		2013-01-11
+ *	@date		2013-01-12
  *	@author		Dietrich Roland Pehlke
  *	@package	Lepton-CMS - Modules: xFastTemplate2
  *

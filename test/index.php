@@ -177,6 +177,18 @@ $source = $xft2->get_by_template(
 
 $test_content .= "<pre>".$source."</pre>";
 
+/**
+ *	9
+ */
+$test_content .= "<b>Testing css methods.</b>";
+$path = dirname(__FILE__)."/css/test.css";
+$css = $xft2->optimize_css( 
+	$path,
+	"",
+	true
+);
+$test_content .= "<pre>".$css."</pre>";
+
 $test_content .= "<hr class='delimiter' />";
 
 $test_content .= "<p>end</p>";
