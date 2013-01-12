@@ -2,7 +2,7 @@
 
 /**
  *	class suite_css
- *	JavaScript specific methods for xFastTemplate2
+ *	CSS specific methods for xFastTemplate2
  *
  *	@version	0.1.0
  *	@date		2013-01-12
