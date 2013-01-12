@@ -159,6 +159,26 @@ $test_content .= "<p class='query'>".$q."</p>";
 
 $test_content .= "<hr class='delimiter' />";
 
+/**
+ *	8
+ */
+$test_content .= "<b>Generating source.</b>";
+$values = array(
+	'version'	=> '0.1.0',
+	'date'		=> date("Y-m-d", time() ),
+	'class_name' => "xft2_experimental_class",
+	'guid'	=> 'ABA5A01C-D1E4-48A5-89FA-D7AC6AF52632',
+	'hash'	=> md5( microtime() )
+);
+$source = $xft2->get_by_template(
+	'simple_source.lte',
+	$values
+);
+
+$test_content .= "<pre>".$source."</pre>";
+
+$test_content .= "<hr class='delimiter' />";
+
 $test_content .= "<p>end</p>";
 
 $page_content = array(

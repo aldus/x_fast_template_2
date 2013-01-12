@@ -34,5 +34,47 @@ class suite_js
 	 	$aStr = str_replace(array_keys($var), array_values($var), $aStr);
 	 
 	 }
+	 
+	 /**
+	  *	@param	string	Any filename and path of a given js-file
+	  *	@return	string	Compressed/modified content of the js-file
+	  *
+	  */
+	 public function optimize ($aFileName) {
+	
+		$source = implode("", FILE($aFileName));
+		$temp = explode(".", $aFileName);
+		$last = array_pop($temp);
+		$new_file_name = implode(".", $temp)."_opt.".$last;
+		
+		$pattern = Array(
+			"*[\\/][\\/][\\{,\\},_,\\[,\\],#,\\(,\\),;,:, ,\\.,\\-,a-z,A-Z,0-9,!,?,\\',\",\r\n,\t]{0,}[\n|\r]*",
+			"*[\t]{0,}*", 
+			"*[\n|\r]{2,}*", 
+			"*[\n][ ]{0,}*",
+			"*[)][ ]{0,}[)]*",
+			"*[ ]{0,}[(][ ]{0,}[(]*",
+			"*[ ]{0,}([\\=|\\+|\\-|\\*|\\<|\\/|\\?|\\:])[ ]{1,}*",
+			"*[ ]{0,}([(|)])*",
+			"*[ ]{0,}([\{|\\}])[ ]{0,}*",
+			"*[\n|\r]{1,}*",
+			"*[\\}][\n|\r][\\}]*",
+			"*[\\}]{2}[\n|\r][\\}]*",
+			"*[;][\n|\r]*"
+			);
+			
+		$replace = Array("","", "\n", "\n", "))", "((", "\\1", "\\1", "\\1","\n", "}}", "}}}", ";");
+		
+		$source = preg_replace($pattern, $replace, $source);
+		
+		if (file_exists($new_file_name)) unlink($new_file_name);
+		$fp = fopen($new_file_name, "w");
+		if ($fp) {
+			fwrite($fp, $source, strlen($source));
+			fclose($fp);
+		}
+		
+		return $source;
+	}
 
 }

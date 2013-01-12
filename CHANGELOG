@@ -4,6 +4,8 @@
  *
  *	0.6.2				Minor codechanges and bugfixes.
  *						Add test(-files) and error template to the project.
+ *						Add css suite an method optimize for experimental use.
+ *						Add js method optimize for experimental use in js-suite.
  *
  *	0.6.0	2013-01-10	Moved changeloc from the info.php to the CHANGELOG file.
  *						Remove the WebsiteBaker suite and add a Lepton-CMS suite to the project.
