@@ -1,2 +1,0 @@
-<!-- a very simple template -->
-<p>{{ message }}</p>
