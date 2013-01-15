@@ -37,15 +37,25 @@ class suite_css
 		$term_2 = array_pop($temp);
 		$new_file_name = implode(".", $temp)."_".$this->filename_addition.".".$term_2;
 	
-		$css_str = implode("", FILE($aCSS_file) );
+		$css_str = file_get_contents( $aCSS_file );
 		
-		$pattern = array("*[\t]{1,}*", 
-			"*[;][\n|\r]{1,}*", 
-			"*[ ]{0,}[\{][ ]{0,}[\n|\r]{1,}*", 
-			"*[\/][\*][\{,\},_,\[,\],#,\(,\),;,:, ,\.,\-,a-z,A-Z,0-9,!,?,\',\",\r\n,\t]{0,}[\*][\/]*", 
-			"*[\n|\r]{1,}*", "*[;][ ]{0,}[\n|\r]*"
+		$pattern = array(
+		/* 1 */	"*[\t]{1,}*", 
+		/* 2 */	"*[;][\n|\r]{1,}*", 
+		/* 3 */	"*[ ]{0,}[\{][ ]{0,}[\n|\r]{1,}*", 
+		/* 4 */	"*[\/][\*][\{,\},_,\[,\],#,\(,\),;,:, ,\.,\-,a-z,A-Z,0-9,!,?,\',\",\r\n,\t]{0,}[\*][\/]*", 
+		/* 5 */	"*[\n|\r]{1,}*", 
+		/* 6 */	"*[;][ ]{0,}[\n|\r]*"
 		);
-		$replace = array("", "; ", " { ", "", "\n", "; ");
+		
+		$replace = array(
+		/* 1 */ "",
+		/* 2 */ "; ",
+		/* 3 */ " { ",
+		/* 4 */ "",
+		/* 5 */ "\n",
+		/* 6 */ "; "
+		);
 		
 		$r = preg_replace($pattern, $replace, $css_str);
 		
@@ -53,6 +63,8 @@ class suite_css
 			$t = explode("/", $new_file_name);
 			$new_file_name = $aTargetFolder.array_pop($t);
 		}
+		
+		if (file_exists($new_file_name)) unlink($new_file_name);
 		
 		$fp = fopen($new_file_name, "w");
 		if ($fp) {
@@ -62,5 +74,4 @@ class suite_css
 		
 		return (true === $return_result) ? $r : NULL;
 	}
-
 }
