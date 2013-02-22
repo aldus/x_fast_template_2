@@ -2,6 +2,8 @@
  *
  *	Changelog for xFastTemplate2
  *
+ *	0.6.3	2013-02-22	Change "ereg_replace" (marked as deprecated) to "preg_replace" inside include.php.
+ *
  *	0.6.2	2013-01-14	Minor codechanges and bugfixes.
  *						Add an error template to the project.
  *						Add css suite an method optimize for experimental use.

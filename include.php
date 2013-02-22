@@ -648,7 +648,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 		$Replace = Array("", "\n", "\n");
 		$aHTML_Source = preg_replace($Pattern, $Replace, $aHTML_Source);
 		
-		if (true == $option_remove_newLine) $aHTML_Source = ereg_replace("[\n|\r]", "", $aHTML_Source);
+		if (true == $option_remove_newLine) $aHTML_Source = preg_replace("[\n|\r]", "", $aHTML_Source);
 		
 		return true;
 	}

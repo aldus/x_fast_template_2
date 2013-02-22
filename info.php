@@ -1,7 +1,7 @@
 <?php
 
 /**
- *	@version	0.6.2
+ *	@version	0.6.3
  *	@author		Dietrich Roland Pehlke
  *	@package	Lepton-CMS - Modules: xFastTemplate2
  *
@@ -10,8 +10,8 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.6.2";
-$module_platform      = (!defined('LEPTON_GUID')) ? "2.8" : "1.1.0";
+$module_version       = "0.6.3";
+$module_platform      = (!defined('LEPTON_GUID')) ? "2.8" : "1.2.0";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
 $module_description   = "Implantation of drp-xFastTemplate2. see <a href=\"http://drp-x-work.de/lepton-cms/docs/x_fast_template_2/index.html\" target=\"_blank\">documentation</a>. An example-template can be download <a target='blank' href='http://websitebakers.org/_documentation/x_fastTemplate/aldus_simple.zip'> here </a>.";
