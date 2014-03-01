@@ -1,7 +1,7 @@
 <?php
 
 /**
- *	@version	0.6.3
+ *	@version	0.6.4
  *	@author		Dietrich Roland Pehlke
  *	@package	Lepton-CMS - Modules: xFastTemplate2
  *
