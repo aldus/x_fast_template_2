@@ -10,7 +10,7 @@
 $module_directory     = "x_fast_template_2";
 $module_name          = "xFastTemplate2";
 $module_function      = "snippet";
-$module_version       = "0.6.3";
+$module_version       = "0.6.4";
 $module_platform      = (!defined('LEPTON_GUID')) ? "2.8" : "1.2.0";
 $module_author        = "Dietrich Roland Pehlke (Aldus).";
 $module_license       = "GNU General Public License";
