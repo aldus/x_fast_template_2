@@ -2,10 +2,10 @@
 
 /**
  *	class suite_lepton-cms
- *	WebsiteBaker specific methods for xFastTemplate2
+ *	LEPTON-CMS specific methods for xFastTemplate2
  *
- *	@version	0.2.0
- *	@date		2011-03-28
+ *	@version	0.3.0
+ *	@date		2014-10-12
  *	@author		Dietrich Roland Pehlke - Aldus
  *	@package	Lepton-CMS: modules - xFastTemplate2
  *
@@ -27,8 +27,8 @@ class suite_lepton_cms extends suite
 	/**
 	 *	@suite		Lepton-CMS
 	 *
-	 *	@since		0.2.0
-	 *	@platform	Lepton 1.1.4
+	 *	@since		0.3.0
+	 *	@platform	Lepton 1.3.1
 	 *
 	 *	@param	db			object	Any database-connector instance.
 	 *	@param	section_id	mixed	could be a single integer or an array of section_ids
