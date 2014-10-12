@@ -1,12 +1,12 @@
 <?php
 
 /**
- *	@version	0.6.0
- *	@date		2013-01-10
+ *	@version	0.6.4
+ *	@date		2014-10-12
  *	@author		Dietrich Roland Pehlke (Aldus)
  *	@package	Lepton-CMS - Modules: x_fast_template_2
- *	@platform	Lepton-CMS 1.1.4
- *	@require	PHP 5.x
+ *	@platform	Lepton-CMS 1.2.0
+ *	@require	PHP 5.5.x
  *
  */
 
@@ -92,7 +92,7 @@ class HTML_Template_xFastTemplate2 extends xft2_fms
 	 *	@version	0.1.2
 	 *
 	 */
-	public $versionStr = "0.6.2 @RC2 PHP 5.2.x - Lepton-CMS 1.2.1";
+	public $versionStr = "0.6.4 @RC2 PHP 5.5.x - Lepton-CMS 1.3.0";
 	
 	/**
 	 *	Public array hold the error-messages

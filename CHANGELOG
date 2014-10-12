@@ -2,6 +2,8 @@
  *
  *	Changelog for xFastTemplate2
  *
+ *	0.6.5	2014-10-13	Remove obsolete and dead links inside the module-description.
+ *
  *	0.6.4	2014-03-01	Add install.php for the "manual reload (modul)" function(-s) of LEPTON-CMS
  *
  *	0.6.3	2013-02-22	Change "ereg_replace" (marked as deprecated) to "preg_replace" inside include.php.

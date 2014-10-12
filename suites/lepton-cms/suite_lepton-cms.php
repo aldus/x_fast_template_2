@@ -133,17 +133,16 @@ class suite_lepton_cms extends suite
 	 *
 	 */
 	public function get_modules (&$db, $page_id) {
-		$query = "SELECT `section_id`,`module` from `".TABLE_PREFIX."sections` where `page_id`='".$page_id."' order by position";
-		
-		$result = $db->query( $query );
-		
-		if (!$result) return $db->get_error();
 		
 		$return_array = array();
 		
-		while( false != ( $data = $result->fetchRow( MYSQL_ASSOC ) ) ) {
-			$return_array[] = $data['module'];
-		}
+		$db->execute_query(
+			"SELECT `module` from `".TABLE_PREFIX."sections` where `page_id`='".$page_id."' order by position",
+			true,
+			$return_array
+		);
+		
+		if (!$db->is_error()) return $db->get_error();
 		
 		return $return_array;
 	}
