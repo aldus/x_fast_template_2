@@ -1,0 +1,75 @@
+XFastTemplate
+
+QuickReference
+Please see details inside "include.php" of this module.
+
+Class-methods:
+
+- __construct
+	Constructor of the class.
+	
+- __destruct
+	Destructor of the class.
+	
+- direct ()
+	Param:
+		- Any template-file name.
+	Return:
+		- File content without parsing. 
+	
+- get_by_template()
+	Params:
+		- Any template-file-name.
+		- Assoc. array within the data.
+	
+	Return:
+		- the parsed template-string.
+		
+	Example:
+		$myPage = $ref->get_by_template('simplePage.tmpl', array('title'=>$aTitle, 'content'=>'Hello World!));
+		
+	See also:
+	
+- get_by_source()
+	Params:
+		- Any source string within the marker(-s).
+		- Assoc. array within the data.
+	
+	Return:
+		- the parsed template string.
+		
+	See also:
+		
+- get_by_url()
+	Params:
+		- A valid URL.
+		- Assoc. array within the data.
+
+	Return:
+		- the parsed template string.
+	
+- get_sequence()
+	Params:
+		@param	string	$aTemplateName Name of the Template(-file)
+		@param	array	$aHeadInfo Array with the head information for line 2
+	 	@param	array	$bodyContent 2 dimensional Array for the sequence of line 4
+	 	@param	array	$optionalEnd Array with the end-infos for line 6 (optional)
+	 	
+- get_masterTable2()
+	Params:
+		@param	string	Filename of the Template
+		@param	array	The Table-Begin 
+		@param	array	The TR - Informations
+		@param	array	Two-Dimensional Array with the TD-Records
+		@param	array	Holds the informations for the end of the Records
+
+- removeComments()
+	Params:
+		@param 		string	$aHTML_Source			The given HTML-String - pass by reference!
+		@param		bool	$option_remove_newLine	Optional remove the newline ("\n") escape, default is "false"
+		@returns	bool							Always returning true!
+
+
+- capture_echo()
+	Params:
+		@param	string	Any function-call as a string.
