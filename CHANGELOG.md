@@ -1,5 +1,5 @@
 ###Changelog for xFastTemplate2
-- 0.6.5	2014-10-13
++ 0.6.5	2014-10-13
 -- Remove obsolete and dead links inside the module-description.
 -- First steps to strip off the WB 2.8.3 support.
 
