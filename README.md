@@ -1,4 +1,4 @@
-#xFastTemplate2
+##xFastTemplate2
 This (snippet) module is a simple class for php/html/xhmtl/xml templates.
 
 ###Description
