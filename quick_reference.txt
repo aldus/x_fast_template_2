@@ -1,4 +1,4 @@
-XFastTemplate
+xFastTemplate2
 
 QuickReference
 Please see details inside "include.php" of this module.
