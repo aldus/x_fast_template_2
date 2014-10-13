@@ -1,7 +1,7 @@
 ###Changelog for xFastTemplate2
 + 0.6.5	2014-10-13
--- Remove obsolete and dead links inside the module-description.
--- First steps to strip off the WB 2.8.3 support.
+++ Remove obsolete and dead links inside the module-description.
+++ First steps to strip off the WB 2.8.3 support.
 
 - 0.6.4	2014-03-01
 -- Add install.php for the "manual reload (modul)" function(-s) of LEPTON-CMS
