@@ -3,7 +3,7 @@ This (snippet) module is a simple class for php/html/xhmtl/xml templates.
 
 ### Description
 Module for Lepton-CMS  
-see: http://www.lepton-cms.org
+see: http://www.lepton-cms.org  
 and: http://forum.lepton-cms.org
 
 #### Author(-s)
