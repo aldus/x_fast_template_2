@@ -10,6 +10,7 @@
  *	
  */
 
+namespace x_fast_template_2\suites\js;
 
 class suite_js
 {

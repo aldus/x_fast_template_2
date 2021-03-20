@@ -13,6 +13,8 @@
  *
  */
 
+namespace x_fast_template_2\suites\mysql;
+
 class suite_mysql
 {
 

@@ -11,6 +11,8 @@
  *
  */
 
+namspace x_fast_template_2\suites\lepton-cms;
+
 require_once( dirname(__FILE__)."/../suite.php");
 
 class suite_lepton_cms extends suite

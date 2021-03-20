@@ -10,6 +10,7 @@
  *	
  */
 
+namespace x_fast_template_2\suites\css;
 
 class suite_css
 {

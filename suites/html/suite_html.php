@@ -10,6 +10,8 @@
  *	
  */
 
+namespace x_fast_template_2\suites\html;
+
 class suite_html
 {
 

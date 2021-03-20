@@ -1,0 +1,8 @@
+<h1>Hello {{ name }}</h1>
+
+<p>This here is running under</p>
+
+<p>{{ info }}</p>
+
+<hr />
+
