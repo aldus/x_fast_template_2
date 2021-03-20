@@ -228,7 +228,7 @@ class parser extends \LEPTON_abstract
         
             return preg_replace($Pattern, $Replace, $templateStr);
         }
-        return 0;
+        return false;
     }
 
     /**
@@ -254,7 +254,7 @@ class parser extends \LEPTON_abstract
         
             return preg_replace($Pattern, $Replace, $templateStr);
         }
-        return 0;
+        return false;
     }
 
     /**
@@ -285,7 +285,7 @@ class parser extends \LEPTON_abstract
         
             return $this->get_by_source( $source, $args );
         }
-        return 0;
+        return false;
     }
     /**
      *  Build by an Sequence
@@ -338,7 +338,7 @@ class parser extends \LEPTON_abstract
             $returnStr = "";
         
             /**
-             *	head
+             *  head
              */
         
             $Pattern = Array();
@@ -351,8 +351,8 @@ class parser extends \LEPTON_abstract
             $returnStr .= preg_replace($Pattern, $Replace, $tempStr);
         
             /**
-             *	Body -> options
-             *	Zwei-dimensionales Array!
+             *  Body -> options
+             *  Zwei-dimensionales Array!
              */
          
             foreach ( $all_args[2] as $row) {
@@ -391,7 +391,7 @@ class parser extends \LEPTON_abstract
             return $returnStr;
         
         }
-        return 0;
+        return false;
     }
 
     /**
@@ -448,7 +448,7 @@ class parser extends \LEPTON_abstract
             return $returnStr;
         
         }
-        return 0;
+        return false;
     }
 
     /**
@@ -741,24 +741,24 @@ class parser extends \LEPTON_abstract
         $this->xft2_error_msg = Array (
             'german' => Array(
                 'headline' => 'Bei der Programmausf&uuml;hrung ist ein Fehler aufgetreten:',
-                'noErrorTmpl' => 'Keine Vorlage f&uuml;r die Fehlermeldung gefunden!',
-                '100' => 'Kein Template oder Pfad angegeben',
+                'noErrorTmpl' => 'Keine Vorlage für die Fehlermeldung gefunden!',
+                '100' => 'Kein Template oder Pfad angegeben!',
                 '101' => 'Die TemplateDatei <b>{file}</b> ist nicht vorhanden oder der Pfad ist fehlerhaft.',
-                '200' => 'Anzahl der Zeilen im Template {file} ist incorrect; es m&uuml;ssen mindestens 6 Zeilen vorhanden sein!',
+                '200' => 'Anzahl der Zeilen im Template {file} ist incorrect; es müssen mindestens 6 Zeilen vorhanden sein!',
                 '300' => 'Kein TemplateString angebeben!',
                 '400' => 'Keine Datei angegeben!',
-                '401' => 'Datei <b>{file}</b> ist nicht vorhanden oder der Pfad ist fehlerhaft.',
+                '401' => 'Datei <em>{file}</em> ist nicht vorhanden oder der Pfad ist fehlerhaft.',
                 '500' => 'Aufruf einer nicht mehr inplantierten Funktion!.'
             ),
             'english' => Array(
                 'headline' => 'An error occurs while operation:',
                 'noErrorTmpl' => 'Template for the error-messages not found!',
-                '100' => 'No Template given as argumen 1.',
+                '100' => 'No Template given as param 1.',
                 '101' => 'File <b>{file}</b> could not be found, maybe missing or path is incorrect.',
                 '200' => 'Incorrect number of lines in the template {file}; there must be at last 6 lines as a minimum!',
                 '300' => 'No source given!',
                 '400' => 'No file given!',
-                '401' => 'File <b>{file}</b> could not be found; maybe it\'s missing or the path isn\'t correct!',
+                '401' => 'File <em>{file}</em> could not be found; maybe it\'s missing or the path isn\'t correct!',
                 '500' => 'Call for an obsolete public function that doesn\'t exsits anymore!'
             )
         );
@@ -1167,8 +1167,8 @@ class parser extends \LEPTON_abstract
     /**
      *  Removes unused marker
      *
-     *  @since	0.6.4
-     *  @param string   aStringtoParse -> pass by reference!
+     *  @since  0.6.4
+     *  @param string   $aString -> pass by reference!
      *
      */
     public function remove_unusedMarkers (&$aString) {

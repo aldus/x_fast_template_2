@@ -1,0 +1,32 @@
+This is nothing else than a test-file for the use of "blocks"
+inside xft2
+
+### this is a block ###
+
+Nothing mor than  a test
+
+### /this is a block ###
+
+out of a block
+
+### block2 ###
+<h3>Hello xft2 :: i'm block </h3>
+{{ marker }}
+and a marker
+<p> a line </p>
+### /block2 ###
+
+there are no nested blocks
+### main ###
+- line 1
+- line 2
+- line 3
+### subline ###
+-- subline 1
+-- subline 2
+-- subline 3
+### /subline ###
+- line 4
+### /main ###
+
+be carefull

@@ -10,5 +10,5 @@
  *  @license    GNU General Public License
  *
  */
-header('Location: ../../index.php');
 
+header('Location: ../../index.php');

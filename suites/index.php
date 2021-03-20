@@ -7,5 +7,3 @@
  *
  */
 header('Location: ../../index.php');
-
-?>
