@@ -1,0 +1,350 @@
+/** Buks CSS 1.4 - 2010-01-21 (c) Haddewig Design **/
+
+
+a:link		{ color: #980038; text-decoration: underline }
+a:visited	{ color: #980038; text-decoration: underline }
+a:hover		{ color: #c05252; text-decoration: underline }
+a:active	{ color: #d37a5e; text-decoration: none }
+
+
+* {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.6em;
+	color: #980038;
+}
+
+p {
+	margin: 0px 0px 0px 0px;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+sup {
+	font-size: 9px;
+	line-height: 1.0em;
+}
+
+h1 {
+	color: #ffffff;
+	font-weight: bold;
+	line-height: 8px;
+	text-align: left;
+}
+
+h2 {
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 36px;
+	color: #ca7279;
+}
+
+h3 a {
+	font-weight: bold;
+	font-size: 36px;
+	color: #ca7279;
+}
+
+ul {
+	margin-left:0px;
+	width:0px;
+}
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #d99eab;
+}
+
+div#back {
+	position: relative;
+	width: 980px;
+	height: auto;
+	background: #fde5bb url(../images/tasse.gif) no-repeat bottom center;
+	text-align: left;
+}
+
+div#head {
+	width: 100%;
+	height: 125px;
+	background: #ffffff url(../images/dampf1.gif) no-repeat bottom right;
+	text-align: left;
+}
+
+div#headline {
+	width: 100%;
+	height: 45px;
+	background: #e9b7a1 url(../images/dampf2.gif) no-repeat top right;
+	text-align: left;
+	padding-top: 5px;
+	vertical-align: bottom;
+}
+
+div#subhead {
+	width: 100%;
+	height: 50px;
+	background: #fde5bb url(../images/dampf3.gif) no-repeat top right;
+}
+
+div#menu {
+	display:block;
+	width: 100%;
+	height: 25px;
+	background-color: #980038;
+}
+
+ul#menu {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+
+li#first_item {
+/** margin-left: 220px; **/
+	margin-left: 258px;
+}
+
+li.menu_item {
+	display: block;
+	float: left;
+	width: auto;
+	height: 25px;
+	vertical-align: middle;
+	padding-top: 1px;
+	color: #4a4c48;
+	text-decoration: none;
+}
+
+li.menu_item a {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	background-color: #980038;
+	display: block;
+	float: left;
+	width: auto;
+	height: 22px;
+	padding: 1px 10px 0px 10px;
+
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+li.menu_item a:hover {
+	background-color: #c05252;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+li.menu_item a#sel {
+	color: #ffffff;
+	background-color: #d37a5e;
+}
+
+div#cent {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+ 	height: 50px;
+	z-index: 2;
+}
+
+div#umenu {
+	background: transparent url(../images/umenu-verlauf.png) repeat-x top left;
+	width: 880px;
+ 	height: 100px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+div#content {
+	position: relative;
+	left: 50px;
+	top: 0px;
+	width: 880px;
+ 	min-height: 350px;
+	z-index: 1;
+	padding-bottom: 50px;
+}
+
+div#impressum {
+	position: relative;
+	left: 50px;
+	top: 0px;
+	width: 750px;
+ 	min-height: 350px;
+	z-index: 1;
+	padding-bottom: 50px;
+}
+
+div#contentindex {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 980px;
+ 	min-height: 350px;
+	z-index: 1;
+	padding-bottom: 50px;
+	text-align: center;
+	background: #ffffff url(../images/start-back.gif) repeat-x top left;
+}
+
+div#address {
+	position: relative;
+	left: 500px;
+	width: 250px;
+	text-align: left;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.group {
+	background: url(../images/rubrik.gif) no-repeat top left;
+	height: 25px;
+	padding: 0px 8px 0px 8px;
+}
+
+
+.swash {
+	font-family: Allura, cursive;
+	font-size: 30px;
+	padding: 20px 8px 0px 8px;
+}
+
+
+.quantity, .quantitymini {
+	color: #ffffff;
+	text-align: right;
+	background: url(../images/rubrik.gif) no-repeat top right;
+	height: 25px;
+	padding: 0px 8px 0px 8px;
+}
+
+.quantitymini {
+	font-size: 10px;
+}
+
+.groupparty {
+	background: url(../images/rubrik-partyhits.gif) no-repeat top left;
+	height: 65px;
+	width: 220px;
+	padding: 0px 8px 0px 8px;
+}
+
+.groupparty h1 {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.quantityparty {
+	color: #980038;
+	text-align: right;
+	background: url(../images/rubrik-partyhits-r.gif) no-repeat top right;
+	height: 25px;
+	padding: 0px 8px 0px 8px;
+}
+
+.tabelle {
+	width: 420px;
+	padding: 20px 0px 0px 0px;
+	text-align: left;
+}
+
+.tabelle2 {
+	width: 420px;
+	padding: 5px 0px 5px 0px;
+	text-align: left;
+	background-color: #f3ceae;
+
+	-moz-border-radius:    4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius:  4px;
+	border-radius:         4px;
+}
+
+.num {
+	width: 40px;
+	vertical-align: top;
+	font-weight: bold;
+	padding: 0px 0px 0px 8px;
+	text-align: left;
+}
+
+.ger {
+	width: 320px;
+	vertical-align: top;
+	padding: 0px 0px 10px 0px;
+	text-align: left;
+}
+
+.gers {
+	width: 260px;
+	vertical-align: top;
+	padding: 0px 0px 10px 0px;
+	text-align: left;
+}
+
+.gerb {
+	width: 360px;
+	vertical-align: top;
+	padding: 0px 0px 10px 8px;
+	text-align: left;
+}
+
+.eur, .eurl {
+	width: 60px;
+	vertical-align: bottom;
+	text-align: right;
+	padding: 0px 8px 10px 0px;
+}
+
+.eurl {
+	font-weight: bold;
+}
+
+.legende {
+	width: 420px;
+	padding: 20px 0px 0px 8px;
+	text-align: left;
+	border-top: 1px solid #e9b7a1;
+	margin-top: 10px;
+}
+
+.kasten {
+	width: 420px;
+	padding: 5px 5px 5px 8px;
+	text-align: left;
+	background-color: #f3ceae;
+	margin-bottom: 30px;
+}
+
+.rspalte {
+	border-left: 1px solid #e9b7a1;
+
+}
+
+.anker a {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	line-height: 10px;
+	color: #fde5bb;
+}
+
+.anker:before{content:url(../images/spacer.png);}

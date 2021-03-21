@@ -177,8 +177,8 @@ class parser extends \LEPTON_abstract
                     break;
 
                 case 'css':
-                    require_once( dirname(__FILE__)."/suites/css/suite_css.php");
-                    $this->__suites[$name] = new suite_css();
+                    //require_once( dirname(__FILE__)."/suites/css/suite_css.php");
+                    $this->__suites[$name] = new \x_fast_template_2\suites\css\suite_css();
                     $return_value = true;
                     break;
             }
@@ -1415,12 +1415,15 @@ class parser extends \LEPTON_abstract
         return $this->__suites['js']->clean_up_str( $aStr );
      }
  
-     /**
-      * @suite CSS
-      */
-     public function optimize_css($aCSS_file, $aTargetFolder= "", $return_result = true) {
-        if (false === $this->__register_suite('css')) return NULL;
+    /**
+     *  @suite CSS
+     */
+    public function optimize_css($aCSS_file, $aTargetFolder= "", $return_result = true) {
+        if (false === $this->__register_suite('css'))
+        {
+            return NULL;
+        }
         return $this->__suites['css']->optimize( $aCSS_file, $aTargetFolder, $return_result );
-     }
+    }
 }
 /** End of Class */

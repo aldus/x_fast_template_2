@@ -1,5 +1,6 @@
 ## xFastTemplate2
 This (snippet) module is a simple class for php/html/xhmtl/xml templates.  
+Please keep in mind that this module is out of date - use e.g. "Twig" instead.
 
 ### Description
 Module for Lepton-CMS  
